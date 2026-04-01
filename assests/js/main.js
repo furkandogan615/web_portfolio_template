@@ -98,4 +98,3 @@ const secObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.4 });
 
 sections.forEach(s => secObserver.observe(s));
-
