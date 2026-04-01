@@ -1,1 +1,520 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahi Evran — Pirler Piri</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<header>
+  <a href="index.html" class="logo">Ahi <span>Evran</span></a>
+  <div class="header-right">
+    <nav>
+      <a href="#hayat"    data-num="01">Hayatı</a>
+      <a href="#ahilik"   data-num="02">Ahilik</a>
+      <a href="#eserler"  data-num="03">Eserleri</a>
+      <a href="#miras"    data-num="04">Mirası</a>
+      <a href="#iletisim" data-num="05">Ziyaret</a>
+    </nav>
+    <button class="theme-toggle" aria-label="Tema değiştir">
+      <span class="icon-moon">☽</span>
+      <span class="icon-sun">☀</span>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+
+  <div class="hero-tag">Ahilik Teşkilatının Kurucusu · Pirler Piri</div>
+
+  <h1 class="hero-title">
+    İlim ile<br><em>Ahlak</em><br>Arasında.
+  </h1>
+
+  <p class="hero-sub">
+    Selçuklu döneminde 32 esnafı teşkilatlandıran, dünyanın ilk meslek birliğini kuran, bilgeliği ve erdemi ile çağını aşan büyük âlim ve velî.
+  </p>
+
+  <div class="hero-bottom">
+    <div style="display:flex;gap:24px;align-items:center;">
+      <a href="#hayat" class="hero-cta">
+        <span>Hayatını Keşfet</span>
+        <span>→</span>
+      </a>
+      <a href="#ahilik" class="hero-cta" style="background:transparent;color:var(--accent);border:1px solid var(--border);">
+        <span>Ahiliği Öğren</span>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num">90+</span>
+        <span class="stat-label">Yıl Yaşadı</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">32</span>
+        <span class="stat-label">Esnaf Piri</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">20+</span>
+        <span class="stat-label">Eseri Var</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">13.</span>
+        <span class="stat-label">Yüzyıl</span>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      <span>Kaydır</span>
+    </div>
+  </div>
+</section>
+
+<!-- HAYATI -->
+<section class="section" id="hayat">
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <h2 class="section-title">Biraz<br><em>Hayatı</em></h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-text reveal reveal-delay-1">
+      <p>Asıl adı <strong>Nasîrüddin Mahmud</strong>'dur. 1171 yılında İran'ın Batı Azerbaycan bölgesindeki Hoy kasabasında dünyaya geldi. Çocukluğu ve ilk tahsil yılları Azerbaycan'da geçti.</p>
+      <p>Gençliğinde Horasan ve Maveraünnehir bölgesine giderek büyük âlim <strong>Fahrettin Razi</strong>'den felsefe, tıp, kelam ve tefsir okudu. Hac yolculuğunda tanıştığı Şeyh Evhadüddin Kirmani'ye intisap etti; hocasının kızı <strong>Fatma Bacı</strong> ile evlendi.</p>
+      <p>1205'te hocasıyla birlikte Anadolu'ya geldi. Konya, Kayseri ve çevre şehirlerde esnafı teşkilatlandırdı. Kayseri'de bir deri atölyesi kurarak debbağlık sanatını geliştirdi; bu nedenle debbağların piri olarak tanındı. Ömrünün son yıllarını <strong>Kırşehir</strong>'de geçirdi ve 1261'de şehit edildi.</p>
+      <div class="skill-pills">
+        <div class="pill"><span>Felsefe</span></div>
+        <div class="pill"><span>Tıp</span></div>
+        <div class="pill"><span>Tasavvuf</span></div>
+        <div class="pill"><span>Kelam</span></div>
+        <div class="pill"><span>Tefsir</span></div>
+        <div class="pill"><span>Fıkıh</span></div>
+        <div class="pill"><span>Debbağlık</span></div>
+        <div class="pill"><span>Hadis</span></div>
+      </div>
+    </div>
+
+    <div class="about-visual reveal reveal-delay-2">
+      <div class="about-visual-initials">AE</div>
+      <div class="about-deco">Ahilik Teşkilatı · 1205</div>
+    </div>
+  </div>
+</section>
+
+<!-- HAYAT ZAMAN ÇİZELGESİ -->
+<section class="section" style="padding-top:0;" id="zaman">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Hayat<br><em>Zaman Çizelgesi</em></h2>
+  </div>
+
+  <div class="timeline">
+    <div class="tl-item reveal reveal-delay-1">
+      <div class="tl-year">1171</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-title">Doğum · Hoy Kasabası, Azerbaycan</div>
+        <div class="tl-desc">Türkmen yerleşim bölgesi olan Hoy kasabasında dünyaya geldi. Asıl adı Nasîrüddin Mahmud'tur; "Ahi Evran" lakabını sonradan aldı. "Evran" sözcüğü Türkçe'de ejderha ve gökyüzü anlamına gelir.</div>
+      </div>
+    </div>
+    <div class="tl-item reveal reveal-delay-2">
+      <div class="tl-year">~1185</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-title">Horasan'da Eğitim</div>
+        <div class="tl-desc">Büyük İslam âlimi Fahrettin Razi'nin ders halkasına katıldı. Felsefe, tıp, astronomi, kelam ve tefsir alanlarında kapsamlı bir eğitim aldı. İbn-i Sina ve Farabi'nin eserlerini derinlemesine inceledi.</div>
+      </div>
+    </div>
+    <div class="tl-item reveal reveal-delay-3">
+      <div class="tl-year">1204</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-title">Bağdat · Kirmani ile Tanışma</div>
+        <div class="tl-desc">Hac yolculuğunda Şeyh Evhadüddin Kirmani ile tanıştı ve ona intisap etti. Abbasi Halifesi'nin kurduğu Fütüvvet Teşkilatına katılarak şed kuşandı. Bu dönem manevi olgunluğunun temel taşını oluşturdu.</div>
+      </div>
+    </div>
+    <div class="tl-item reveal reveal-delay-1">
+      <div class="tl-year">1205</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-title">Anadolu'ya Geliş · Fatma Bacı ile Evlilik</div>
+        <div class="tl-desc">Hocası Kirmani ve Muhyiddin İbn Arabi ile birlikte Anadolu'ya geldi. Hocasının kızı Fatma Bacı ile evlendi. Fatma Bacı, kadınlar için Bacıyân-ı Rum teşkilatını kurdu; bu teşkilat dünyanın bilinen ilk kadın örgütü sayılır.</div>
+      </div>
+    </div>
+    <div class="tl-item reveal reveal-delay-2">
+      <div class="tl-year">1206</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-title">Kayseri'de Deri Atölyesi</div>
+        <div class="tl-desc">Kayseri'ye yerleşerek bir deri işleme atölyesi kurdu. Debbağlık sanatını sistematik hale getirdi. Esnafı örgütlemeye ve Ahilik teşkilatını yaymaya başladı. Selçuklu Sultanı Alâeddin Keykubad'ın desteğini kazandı.</div>
+      </div>
+    </div>
+    <div class="tl-item reveal reveal-delay-3">
+      <div class="tl-year">1221</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-title">Moğol İstilası ve Mücadele</div>
+        <div class="tl-desc">Moğol baskısı Anadolu'yu derinden sarstı. Ahi Evran, Türkmen halkının hem manevi hem maddi dayanışmasını örgütledi. Bu zorlu dönemde Ahilik teşkilatı Anadolu'nun direniş omurgasına dönüştü.</div>
+      </div>
+    </div>
+    <div class="tl-item reveal reveal-delay-1">
+      <div class="tl-year">~1240</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-title">Kırşehir'e Yerleşme</div>
+        <div class="tl-desc">Siyasi baskılar nedeniyle Konya'yı terk ederek Kırşehir'e geldi. Hayatının son dönemini burada geçirdi. Hacı Bektaş Velî ile dostluk kurdu; Mevlana çevresiyle ise siyasi ihtilafa düştü.</div>
+      </div>
+    </div>
+    <div class="tl-item reveal reveal-delay-2">
+      <div class="tl-year">1261</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-title">Şehadet · Kırşehir</div>
+        <div class="tl-desc">93 yaşında Moğollara karşı mücadele ederken şehit edildiği rivayet edilir. Kabri, Kırşehir'de bugün hâlâ ayakta olan türbesindedir. Sultan Veled, onun vefatı üzerine bir mersiye kaleme almıştır.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AHİLİK TEŞKİLATI -->
+<section class="section bg2-section" id="ahilik">
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Ahilik<br><em>Teşkilatı</em></h2>
+  </div>
+
+  <div class="about-text reveal reveal-delay-1" style="margin-bottom:40px;max-width:680px;">
+    <p>Ahilik, Ahi Evran'ın kurduğu ve 13. yüzyıldan itibaren Anadolu'da hızla yayılan esnaf, sanatkar ve yiğitlik teşkilatıdır. Merkezî yapısı Kırşehir'de olan bu örgüt; ahlak, bilim, sanat ve cömertliği temel ilke olarak benimsedi. Selçuklu ve Osmanlı coğrafyasında her esnaf, Kırşehir'den <em>İcâzetnâme</em> (ruhsat belgesi) almak zorundaydı.</p>
+  </div>
+
+  <div class="ahilik-grid reveal reveal-delay-2">
+    <div class="ahilik-card">
+      <div class="ahilik-icon">◈</div>
+      <h3>Ahlak</h3>
+      <p>Dürüstlük, doğruluk ve adalet temel ilkedir. Müşteriyi aldatmak, ölçüde hile yapmak ve kalitesiz mal satmak kesinlikle yasak sayılırdı.</p>
+    </div>
+    <div class="ahilik-card">
+      <div class="ahilik-icon">◈</div>
+      <h3>Sanat</h3>
+      <p>Çıraktan kalfa, kalfadan ustaya uzanan katı eğitim sistemi. Ustalık "şed kuşanma" töreniyle resmîleşirdi. Kalite zorunlu, taklit yasaktı.</p>
+    </div>
+    <div class="ahilik-card">
+      <div class="ahilik-icon">◈</div>
+      <h3>Akıl</h3>
+      <p>Bilim ve aklı rehber edinmek. Ahilik, ilmin insanlığın hizmetine sunulmasını esas aldı; cahillik ile tembellik en büyük kusurlar sayıldı.</p>
+    </div>
+    <div class="ahilik-card">
+      <div class="ahilik-icon">◈</div>
+      <h3>Cömertlik</h3>
+      <p>Zaviyeler her yolcuya açıktı, üç gün bedava yiyecek ve konaklama verilirdi. Misafirperverlik kutsal bir görev kabul edilirdi.</p>
+    </div>
+  </div>
+
+  <div class="ahilik-basamak reveal">
+    <div class="section-header" style="margin-bottom:28px;">
+      <span class="section-num" style="opacity:1;">—</span>
+      <h3 class="section-title" style="font-size:clamp(20px,3vw,32px);">Ahilik <em>Dereceleri</em></h3>
+    </div>
+    <div class="projects-list">
+      <div class="project-item reveal reveal-delay-1">
+        <span class="project-num">001</span>
+        <div class="project-info">
+          <div class="project-name">Yiğit (Yamak)</div>
+          <div class="project-desc">Ahilik yoluna ilk adımı atan acemi. Temel iş ahlakı ve meslek bilgisi öğrenir; ustasına hizmet eder.</div>
+        </div>
+        <div class="project-tags"><span class="tag">Başlangıç</span><span class="tag">Eğitim</span></div>
+      </div>
+      <div class="project-item reveal reveal-delay-2">
+        <span class="project-num">002</span>
+        <div class="project-info">
+          <div class="project-name">Çırak</div>
+          <div class="project-desc">Belirli bir süre yamak olarak hizmet ettikten sonra ustalık sınavına girer. Başarılı olursa peştamal kuşanır.</div>
+        </div>
+        <div class="project-tags"><span class="tag">Peştamal</span><span class="tag">Sınav</span></div>
+      </div>
+      <div class="project-item reveal reveal-delay-3">
+        <span class="project-num">003</span>
+        <div class="project-info">
+          <div class="project-name">Kalfa</div>
+          <div class="project-desc">Çıraklığı tamamlayan ve ustalık yolunda olan kişi. Atölye işlerini yönetir, yeni çıraklara rehberlik eder.</div>
+        </div>
+        <div class="project-tags"><span class="tag">Rehberlik</span><span class="tag">Yönetim</span></div>
+      </div>
+      <div class="project-item reveal reveal-delay-1">
+        <span class="project-num">004</span>
+        <div class="project-info">
+          <div class="project-name">Usta</div>
+          <div class="project-desc">Ahilik hiyerarşisinin temel birimi. "Şed kuşanma" töreniyle icazet alır; kendi atölyesini açma hakkını kazanır.</div>
+        </div>
+        <div class="project-tags"><span class="tag">İcazet</span><span class="tag">Şed</span></div>
+      </div>
+      <div class="project-item reveal reveal-delay-2">
+        <span class="project-num">005</span>
+        <div class="project-info">
+          <div class="project-name">Ahi Baba</div>
+          <div class="project-desc">Teşkilatın yerel lideri. Esnaflar arasındaki anlaşmazlıkları çözer, devletle ilişkileri düzenler ve narh denetimini yapar.</div>
+        </div>
+        <div class="project-tags"><span class="tag">Liderlik</span><span class="tag">Denetim</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESERLERİ -->
+<section class="section" id="eserler">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Öne Çıkan<br><em>Eserleri</em></h2>
+  </div>
+
+  <div class="about-text reveal reveal-delay-1" style="margin-bottom:40px;max-width:680px;">
+    <p>Ahi Evran, tasavvuf, felsefe, kelam ve siyaset alanlarında 20'yi aşkın telif ve tercüme eser bıraktı. Eserleri Farsça kaleme alınmış olup Selçuklu medreselerinde okutulmuştur.</p>
+  </div>
+
+  <div class="projects-list">
+    <div class="project-item reveal reveal-delay-1">
+      <span class="project-num">001</span>
+      <div class="project-info">
+        <div class="project-name">Letâif-i Hikmet</div>
+        <div class="project-desc">Selçuklu Sultanı II. İzzeddin Keykavus'a sunulan kapsamlı nasihat kitabı. Siyasetname türünün en önemli örneklerinden biridir; hükümdara adalet, bilgelik ve yönetim ilkelerini anlatır.</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Siyasetname</span>
+        <span class="tag">Farsça</span>
+        <span class="tag">Nasihat</span>
+      </div>
+    </div>
+    <div class="project-item reveal reveal-delay-2">
+      <span class="project-num">002</span>
+      <div class="project-info">
+        <div class="project-name">Tabsıra-i Mübtedi</div>
+        <div class="project-desc">Tasavvuf yoluna yeni adım atanlar için kaleme alınan rehber eser. Ahilik adabı, nefis terbiyesi ve ahlak ilkelerini sade bir dille açıklar.</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Tasavvuf</span>
+        <span class="tag">Ahilik</span>
+        <span class="tag">Ahlak</span>
+      </div>
+    </div>
+    <div class="project-item reveal reveal-delay-3">
+      <span class="project-num">003</span>
+      <div class="project-info">
+        <div class="project-name">Metâli'ü'l-İman</div>
+        <div class="project-desc">İman esaslarını ve İslam ahlakını sistematik biçimde ele alan kelam eseri. Selçuklu medreselerinde ders kitabı olarak okutulmuştur.</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Kelam</span>
+        <span class="tag">İman</span>
+        <span class="tag">Medrese</span>
+      </div>
+    </div>
+    <div class="project-item reveal reveal-delay-1">
+      <span class="project-num">004</span>
+      <div class="project-info">
+        <div class="project-name">Mürşidü'l-Kifâye</div>
+        <div class="project-desc">Ahilik teşkilatının kurallarını, esnaf ilişkilerini ve meslek ahlakını düzenleyen fütüvvetname niteliğinde temel bir rehber.</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Fütüvvetname</span>
+        <span class="tag">Esnaf</span>
+        <span class="tag">Kural</span>
+      </div>
+    </div>
+    <div class="project-item reveal reveal-delay-2">
+      <span class="project-num">005</span>
+      <div class="project-info">
+        <div class="project-name">Şakâiku'n-Nu'mâniye Tercümesi</div>
+        <div class="project-desc">Dönemin önemli ilim eserlerinden yapılan Farsça tercüme çalışması. Ahi Evran'ın tercüme konusundaki ustalığını gözler önüne serer.</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Tercüme</span>
+        <span class="tag">Farsça</span>
+        <span class="tag">İlim</span>
+      </div>
+    </div>
+    <div class="project-item reveal reveal-delay-3">
+      <span class="project-num">006</span>
+      <div class="project-info">
+        <div class="project-name">Diğer Eserler (15+)</div>
+        <div class="project-desc">Fütüvvetnâmeler, risaleler, şiirler ve felsefi denemeler dahil 20'yi aşkın eser. Büyük çoğunluğu Farsça olup bir kısmı henüz tam olarak incelenmemiştir.</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Risale</span>
+        <span class="tag">Şiir</span>
+        <span class="tag">Felsefe</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MİRAS -->
+<section class="section bg2-section" id="miras">
+  <div class="section-header reveal">
+    <span class="section-num">05</span>
+    <h2 class="section-title">Asırları Aşan<br><em>Miras</em></h2>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+    <div class="reveal reveal-delay-1">
+      <div class="miras-liste">
+        <div class="miras-item">
+          <span class="miras-num">01</span>
+          <div>
+            <div class="miras-baslik">Osmanlı Devleti'nin Temeli</div>
+            <div class="miras-acik">Ahiler, Osmanlı'nın kuruluş sürecinde hem ekonomik hem askeri omurga oldu. Osman Gazi'nin en güçlü destekçileri arasında Ahiler yer aldı. Orhan Gazi de Ahi çevrelerinden destek gördü.</div>
+          </div>
+        </div>
+        <div class="miras-item">
+          <span class="miras-num">02</span>
+          <div>
+            <div class="miras-baslik">Dünyanın İlk Esnaf Örgütü</div>
+            <div class="miras-acik">Avrupa loncalarından çok önce kurulan Ahilik, dünya tarihindeki ilk sistematik meslek teşkilatı sayılır. Modern sendikacılık ve tüketici haklarının ilk örneklerini hayata geçirdi.</div>
+          </div>
+        </div>
+        <div class="miras-item">
+          <span class="miras-num">03</span>
+          <div>
+            <div class="miras-baslik">Bacıyân-ı Rum</div>
+            <div class="miras-acik">Eşi Fatma Bacı tarafından kurulan ve Ahi Evran'ın himaye ettiği bu teşkilat, dünyanın bilinen ilk kadın örgütüdür. Anadolu'nun vatanlaşmasında kadınların rolünü belgelemiştir.</div>
+          </div>
+        </div>
+        <div class="miras-item">
+          <span class="miras-num">04</span>
+          <div>
+            <div class="miras-baslik">Yeniçeri Ocağı'na Etki</div>
+            <div class="miras-acik">Ahilik gelenekleri, Hacı Bektaş törenleriyle birleşerek Osmanlı Yeniçeri Ocağı'nın kuruluşuna doğrudan katkı sağladı. Devlet adamları Ahiliğe girmeyi şeref sayardı.</div>
+          </div>
+        </div>
+        <div class="miras-item">
+          <span class="miras-num">05</span>
+          <div>
+            <div class="miras-baslik">Ahi Evran Üniversitesi</div>
+            <div class="miras-acik">Kırşehir'de 2006 yılında kurulan devlet üniversitesi onun adını taşımaktadır. Türkiye genelinde birçok okul, mahalle ve kurum Ahi Evran adıyla anılmaktadır.</div>
+          </div>
+        </div>
+        <div class="miras-item">
+          <span class="miras-num">06</span>
+          <div>
+            <div class="miras-baslik">Ahilik Haftası</div>
+            <div class="miras-acik">Her yıl Ekim ayında Kırşehir'de düzenlenen Ahilik Haftası etkinlikleri; sergiler, törenler ve konferanslarla bu köklü geleneği yaşatmaktadır.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <div class="ahilik-ilkeler">
+        <div class="ilke-baslik">Ahiliğin Dört Temeli</div>
+        <div class="ilke-item">
+          <span class="ilke-icon">◈</span>
+          <div>
+            <div class="ilke-ad">Ahlak</div>
+            <div class="ilke-acik">Dürüstlük, doğruluk, adalet — ticaretin temelidir.</div>
+          </div>
+        </div>
+        <div class="ilke-item">
+          <span class="ilke-icon">◈</span>
+          <div>
+            <div class="ilke-ad">Sanat</div>
+            <div class="ilke-acik">Çıraktan ustaya kaliteli ve özenli üretim anlayışı.</div>
+          </div>
+        </div>
+        <div class="ilke-item">
+          <span class="ilke-icon">◈</span>
+          <div>
+            <div class="ilke-ad">Akıl</div>
+            <div class="ilke-acik">İlim ve aklı her işin rehberi olarak benimsemek.</div>
+          </div>
+        </div>
+        <div class="ilke-item">
+          <span class="ilke-icon">◈</span>
+          <div>
+            <div class="ilke-ad">Cömertlik</div>
+            <div class="ilke-acik">Kapıları herkese açık tutmak, kardeşlik ve yardımlaşma.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ozlus-box reveal reveal-delay-3">
+        <div class="ozlu-baslik">Ahilik Yemini'nden</div>
+        <blockquote class="ozlu-text">
+          "Hiç ölmeyecekmiş gibi bu dünya için,<br>yarın ölecekmiş gibi ahiret için çalış."
+        </blockquote>
+        <div class="ozlu-kaynak">— Ahi Evran Velî</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:60px;" class="reveal">
+    <a href="#iletisim" class="hero-cta">
+      <span>Türbeyi Ziyaret Et</span>
+      <span>→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ZİYARET / İLETİŞİM -->
+<section class="section" id="iletisim" style="background:var(--bg);padding-top:80px;padding-bottom:80px;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+    <div class="reveal">
+      <div class="hero-tag" style="opacity:1;animation:none;">Kırşehir · Türkiye</div>
+      <h2 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.1;color:var(--text);margin-top:16px;">
+        Kabri<br><em style="font-style:italic;color:var(--accent);">Kırşehir'dedir.</em>
+      </h2>
+      <p style="margin-top:20px;font-size:15px;color:var(--text-muted);line-height:1.75;max-width:380px;">
+        Ahi Evran Türbesi ve Camii, Kırşehir şehir merkezinde ziyarete açıktır. Türbe, Selçuklu mimarisinin güzel örneklerinden biridir. Her yıl binlerce ziyaretçi bu tarihi mekânda dua eder ve tarihin izlerini hisseder.
+      </p>
+      <div class="ziyaret-bilgi">
+        <div class="ziyaret-item">
+          <span class="ziyaret-label">Konum</span>
+          <span class="ziyaret-val">Kırşehir Merkez, Ahi Evran Mah.</span>
+        </div>
+        <div class="ziyaret-item">
+          <span class="ziyaret-label">Ziyaret Saatleri</span>
+          <span class="ziyaret-val">Her gün 08:00 – 18:00</span>
+        </div>
+        <div class="ziyaret-item">
+          <span class="ziyaret-label">Giriş</span>
+          <span class="ziyaret-val">Ücretsiz</span>
+        </div>
+        <div class="ziyaret-item">
+          <span class="ziyaret-label">Ahilik Haftası</span>
+          <span class="ziyaret-val">Her yıl Ekim ayı, Kırşehir</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="harita-placeholder">
+        <div class="harita-icerik">
+          <div class="harita-icon">✦</div>
+          <div class="harita-baslik">Ahi Evran Türbesi</div>
+          <div class="harita-alt">Kırşehir, Türkiye</div>
+          <a href="https://maps.google.com/?q=Ahi+Evran+Türbesi+Kırşehir" target="_blank" class="hero-cta" style="margin-top:20px;display:inline-flex;">
+            <span>Haritada Göster</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-copy">© 2026 Ahi Evran Velî · 1171 — 1261 · Pirler Piri</span>
+  <a href="#" class="footer-back" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Başa Dön ↑</a>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
 
