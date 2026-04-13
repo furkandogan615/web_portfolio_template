@@ -31,7 +31,6 @@
       overflow-x: hidden;
     }
 
-    /* Tüm medya öğeleri taşmasın */
     img, video, iframe, svg, picture, canvas {
       max-width: 100%;
       height: auto;
@@ -460,94 +459,51 @@
     }
     footer a { color: var(--gold); text-decoration: none; }
 
-
     /* ═══════════════════════════════════════════════════
-       RESPONSIVE — MEDIA QUERIES
+       RESPONSIVE
     ═══════════════════════════════════════════════════ */
 
-    /* ── TABLET  (≤ 768px) ───────────────────────────── */
     @media (max-width: 768px) {
-
-      /* Masaüstü nav linklerini gizle */
       .nav-links { display: none; }
-
-      /* Hamburger butonunu göster */
       .hamburger { display: flex; }
-
       nav { padding: 0 1.25rem; }
-
       section { padding: 4rem 1rem; }
-
-      /* Hero */
       .hero { padding: 6rem 1rem 3rem; }
       .hero-stats { gap: 1.5rem 2rem; margin-top: 2.5rem; }
-
-      /* Hayat: tek sütun */
       .hayat-content { grid-template-columns: 1fr; gap: 2.5rem; }
-
-      /* Ahilik dereceler: rozetleri gizle (dar ekran) */
       .degree-badges { display: none; }
-
-      /* Eserler: tek sütun */
       .eserler-grid { grid-template-columns: 1fr; }
-
-      /* Miras: tek sütun */
       .miras-grid { grid-template-columns: 1fr; }
-
-      /* Ziyaret: tek sütun */
       .ziyaret-grid { grid-template-columns: 1fr; gap: 2rem; }
-
-      /* Harita oranı koru */
       .ziyaret-map { aspect-ratio: 16/9; }
-
-      /* Pillars: 2 sütun kalsın */
       .pillars { grid-template-columns: 1fr 1fr; }
     }
 
-    /* ── MOBİL (≤ 480px) ─────────────────────────────── */
     @media (max-width: 480px) {
-
       nav { height: 56px; }
-
-      /* Hero butonları dikey */
       .hero-btns { flex-direction: column; align-items: center; }
       .btn { width: 100%; max-width: 280px; text-align: center; }
-
-      /* Hero stats: 2x2 */
       .hero-stats { column-gap: 1.5rem; row-gap: 1rem; }
-
-      /* Pillars: tek sütun */
       .pillars { grid-template-columns: 1fr; }
-
-      /* Degree satırı: dikey */
       .degree { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
       .degree-num { font-size: 1.3rem; min-width: auto; }
-
-      /* Quote block */
       .quote-block { padding: 2rem 0.75rem; }
-
-      /* Mobile menü link boyutu */
-      .mobile-menu a { font-size: 1.7rem; gap: 1.8rem; }
-
-      /* Timeline nokta konumu */
+      .mobile-menu a { font-size: 1.7rem; }
       .tl-item::before { left: -1.65rem; }
-
       section { padding: 3rem 0.85rem; }
     }
 
-    /* ── EXTRA SMALL (≤ 360px) ──────────────────────── */
     @media (max-width: 360px) {
       .hero h1 { font-size: 2rem; }
       .section-title { font-size: 1.7rem; }
       .btn { max-width: 100%; }
       .z-label { min-width: 90px; }
     }
-
   </style>
 </head>
 <body>
 
-  <!-- ═══ NAV ═══════════════════════════════════════ -->
+  <!-- NAV -->
   <nav>
     <a class="nav-logo" href="#top">Ahi Evran</a>
 
@@ -575,7 +531,7 @@
     <a href="#iletisim" class="close-mobile">Ziyaret</a>
   </div>
 
-  <!-- ═══ HERO ═══════════════════════════════════════ -->
+  <!-- HERO -->
   <section class="hero" id="top">
     <p class="hero-badge">Ahilik Teşkilatının Kurucusu · Pirler Piri</p>
     <h1>İlim ile <em>Ahlak</em> Arasında.</h1>
@@ -592,7 +548,7 @@
     </div>
   </section>
 
-  <!-- ═══ HAYAT ══════════════════════════════════════ -->
+  <!-- HAYAT -->
   <section id="hayat">
     <div class="container">
       <p class="section-num">01</p>
@@ -649,7 +605,7 @@
     </div>
   </section>
 
-  <!-- ═══ AHİLİK ═════════════════════════════════════ -->
+  <!-- AHİLİK -->
   <section id="ahilik">
     <div class="container">
       <p class="section-num">02</p>
@@ -674,7 +630,7 @@
     </div>
   </section>
 
-  <!-- ═══ ESERLER ════════════════════════════════════ -->
+  <!-- ESERLER -->
   <section id="eserler">
     <div class="container">
       <p class="section-num">03</p>
@@ -690,13 +646,13 @@
     </div>
   </section>
 
-  <!-- ═══ MİRAS ══════════════════════════════════════ -->
+  <!-- MİRAS -->
   <section id="miras">
     <div class="container">
       <p class="section-num">04</p>
       <h2 class="section-title">Asırları Aşan <em>Miras</em></h2>
       <div class="miras-grid">
-        <div class="miras-item"><div class="miras-num">01</div><div><h3>Osmanlı Devleti'nin Temeli</h3><p>Ahiler, Osmanlı'nın kuruluş sürecinde hem ekonomik hem askeri omurga oldu. Osman Gazi'nin en güçlü destekçileri arasında yer aldılar.</p></div></div>
+        <div class="miras-item"><div class="miras-num">01</div><div><h3>Osmanlı Devleti'nin Temeli</h3><p>Ahiler, Osmanlı'nın kuruluş sürecinde hem ekonomik hem askeri omurga oldu.</p></div></div>
         <div class="miras-item"><div class="miras-num">02</div><div><h3>Dünyanın İlk Esnaf Örgütü</h3><p>Avrupa loncalarından çok önce kurulan Ahilik, dünya tarihindeki ilk sistematik meslek teşkilatı sayılır.</p></div></div>
         <div class="miras-item"><div class="miras-num">03</div><div><h3>Bacıyân-ı Rum</h3><p>Eşi Fatma Bacı tarafından kurulan bu teşkilat, dünyanın bilinen ilk kadın örgütüdür.</p></div></div>
         <div class="miras-item"><div class="miras-num">04</div><div><h3>Yeniçeri Ocağı'na Etki</h3><p>Ahilik gelenekleri Osmanlı Yeniçeri Ocağı'nın kuruluşuna doğrudan katkı sağladı.</p></div></div>
@@ -714,7 +670,7 @@
     </div>
   </section>
 
-  <!-- ═══ ZİYARET ════════════════════════════════════ -->
+  <!-- ZİYARET -->
   <section id="iletisim">
     <div class="container">
       <div class="ziyaret-grid">
@@ -737,13 +693,13 @@
     </div>
   </section>
 
-  <!-- ═══ FOOTER ═════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer>
     © 2026 Ahi Evran Velî · 1171 — 1261 · Pirler Piri &nbsp;|&nbsp;
     <a href="#top">Başa Dön ↑</a>
   </footer>
 
-  <!-- ═══ JAVASCRIPT ═════════════════════════════════ -->
+  <!-- JAVASCRIPT -->
   <script>
     const hamburger  = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
