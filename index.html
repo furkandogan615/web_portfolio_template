@@ -80,7 +80,7 @@
 
     /* ─── HAMBURGER ────────────────────────────────── */
     .hamburger {
-      display: none;
+      display: none; /* masaüstünde gizli, sadece mobilde görünür */
       flex-direction: column;
       justify-content: center;
       gap: 6px;
@@ -464,8 +464,8 @@
     ═══════════════════════════════════════════════════ */
 
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
+      .nav-links { display: none !important; }
+      .hamburger { display: flex !important; }
       nav { padding: 0 1.25rem; }
       section { padding: 4rem 1rem; }
       .hero { padding: 6rem 1rem 3rem; }
