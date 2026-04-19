@@ -22,6 +22,35 @@
       --white:  #f9f4ea;
     }
 
+    [data-theme="light"] {
+      --bg:     #f9f4ea;
+      --bg2:    #f0e9d6;
+      --gold:   #8B5E1A;
+      --gold2:  #a67520;
+      --cream:  #2c1f0e;
+      --muted:  #7a6a52;
+      --border: rgba(139,94,26,0.2);
+      --text:   #3d2f1a;
+      --white:  #1a0f00;
+    }
+
+    .theme-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--gold);
+      font-size: 1.1rem;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.3s, background 0.3s;
+      flex-shrink: 0;
+    }
+    .theme-btn:hover { border-color: var(--gold); background: rgba(201,169,110,0.08); }
+
     html { scroll-behavior: smooth; }
 
     body {
@@ -80,7 +109,7 @@
 
     /* ─── HAMBURGER ────────────────────────────────── */
     .hamburger {
-      display: none; /* masaüstünde gizli, sadece mobilde görünür */
+      display: none;
       flex-direction: column;
       justify-content: center;
       gap: 6px;
@@ -334,10 +363,29 @@
       color: var(--gold);
     }
 
-    /* ─── ESERLER ───────────────────────────────────── */
+    /* ─── ESERLER — SLIDER ──────────────────────────── */
     #eserler { background: var(--bg2); }
 
-    .eserler-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .eserler-slider-wrap {
+      position: relative;
+    }
+
+    .eserler-slider {
+      overflow: hidden;
+    }
+
+    .eserler-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Her slide: 3 kart yan yana (masaüstü) */
+    .eser-slide {
+      min-width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
 
     .eser {
       padding: 2rem;
@@ -352,6 +400,54 @@
     .eser h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--cream); margin-bottom: 0.7rem; font-style: italic; }
     .eser p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
     .eser-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 1rem; }
+
+    /* Slider kontrolleri */
+    .eserler-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .eser-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--gold);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: border-color 0.25s, background 0.25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    .eser-btn:hover { border-color: var(--gold); background: rgba(201,169,110,0.07); }
+    .eser-btn:disabled { opacity: 0.25; cursor: default; }
+
+    .eser-dots {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .eser-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border);
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.25s;
+      padding: 0;
+    }
+    .eser-dot.active {
+      background: var(--gold);
+      transform: scale(1.4);
+    }
 
     /* ─── MİRAS ─────────────────────────────────────── */
     #miras { background: var(--bg); }
@@ -472,11 +568,12 @@
       .hero-stats { gap: 1.5rem 2rem; margin-top: 2.5rem; }
       .hayat-content { grid-template-columns: 1fr; gap: 2.5rem; }
       .degree-badges { display: none; }
-      .eserler-grid { grid-template-columns: 1fr; }
       .miras-grid { grid-template-columns: 1fr; }
       .ziyaret-grid { grid-template-columns: 1fr; gap: 2rem; }
       .ziyaret-map { aspect-ratio: 16/9; }
       .pillars { grid-template-columns: 1fr 1fr; }
+      /* Mobilde eserler: tek kart per slide */
+      .eser-slide { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 480px) {
@@ -514,6 +611,8 @@
       <li><a href="#miras">Mirası</a></li>
       <li><a href="#iletisim">Ziyaret</a></li>
     </ul>
+
+    <button class="theme-btn" id="themeBtn" aria-label="Tema değiştir">☀</button>
 
     <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
       <span></span>
@@ -630,19 +729,71 @@
     </div>
   </section>
 
-  <!-- ESERLER -->
+  <!-- ESERLER — SLIDER -->
   <section id="eserler">
     <div class="container">
       <p class="section-num">03</p>
       <h2 class="section-title">Öne Çıkan <em>Eserleri</em></h2>
-      <div class="eserler-grid">
-        <div class="eser"><div class="eser-num">001</div><h3>Letâif-i Hikmet</h3><p>Sultan II. İzzeddin Keykavus'a sunulan kapsamlı nasihat kitabı. Siyasetname türünün en önemli örneklerinden biridir.</p><div class="eser-tags"><span class="tag">Siyasetname</span><span class="tag">Farsça</span></div></div>
-        <div class="eser"><div class="eser-num">002</div><h3>Tabsıra-i Mübtedi</h3><p>Tasavvuf yoluna yeni adım atanlar için kaleme alınan rehber eser. Ahilik adabını sade bir dille açıklar.</p><div class="eser-tags"><span class="tag">Tasavvuf</span><span class="tag">Ahilik</span></div></div>
-        <div class="eser"><div class="eser-num">003</div><h3>Metâli'ü'l-İman</h3><p>İman esaslarını sistematik biçimde ele alan kelam eseri. Selçuklu medreselerinde ders kitabı olarak okutulmuştur.</p><div class="eser-tags"><span class="tag">Kelam</span><span class="tag">Medrese</span></div></div>
-        <div class="eser"><div class="eser-num">004</div><h3>Mürşidü'l-Kifâye</h3><p>Ahilik teşkilatının kurallarını ve meslek ahlakını düzenleyen fütüvvetname niteliğinde rehber.</p><div class="eser-tags"><span class="tag">Fütüvvetname</span><span class="tag">Esnaf</span></div></div>
-        <div class="eser"><div class="eser-num">005</div><h3>Şakâiku'n-Nu'mâniye Tercümesi</h3><p>Dönemin önemli ilim eserlerinden yapılan Farsça tercüme çalışması.</p><div class="eser-tags"><span class="tag">Tercüme</span><span class="tag">Farsça</span></div></div>
-        <div class="eser"><div class="eser-num">006</div><h3>Diğer Eserler (15+)</h3><p>Fütüvvetnâmeler, risaleler, şiirler ve felsefi denemeler dahil 20'yi aşkın eser bıraktı.</p><div class="eser-tags"><span class="tag">Risale</span><span class="tag">Şiir</span><span class="tag">Felsefe</span></div></div>
+
+      <div class="eserler-slider-wrap">
+        <div class="eserler-slider">
+          <div class="eserler-track" id="eserlerTrack">
+
+            <!-- Slide 1: kartlar 001, 002, 003 -->
+            <div class="eser-slide">
+              <div class="eser">
+                <div class="eser-num">001</div>
+                <h3>Letâif-i Hikmet</h3>
+                <p>Sultan II. İzzeddin Keykavus'a sunulan kapsamlı nasihat kitabı. Siyasetname türünün en önemli örneklerinden biridir.</p>
+                <div class="eser-tags"><span class="tag">Siyasetname</span><span class="tag">Farsça</span></div>
+              </div>
+              <div class="eser">
+                <div class="eser-num">002</div>
+                <h3>Tabsıra-i Mübtedi</h3>
+                <p>Tasavvuf yoluna yeni adım atanlar için kaleme alınan rehber eser. Ahilik adabını sade bir dille açıklar.</p>
+                <div class="eser-tags"><span class="tag">Tasavvuf</span><span class="tag">Ahilik</span></div>
+              </div>
+              <div class="eser">
+                <div class="eser-num">003</div>
+                <h3>Metâli'ü'l-İman</h3>
+                <p>İman esaslarını sistematik biçimde ele alan kelam eseri. Selçuklu medreselerinde ders kitabı olarak okutulmuştur.</p>
+                <div class="eser-tags"><span class="tag">Kelam</span><span class="tag">Medrese</span></div>
+              </div>
+            </div>
+
+            <!-- Slide 2: kartlar 004, 005, 006 -->
+            <div class="eser-slide">
+              <div class="eser">
+                <div class="eser-num">004</div>
+                <h3>Mürşidü'l-Kifâye</h3>
+                <p>Ahilik teşkilatının kurallarını ve meslek ahlakını düzenleyen fütüvvetname niteliğinde rehber.</p>
+                <div class="eser-tags"><span class="tag">Fütüvvetname</span><span class="tag">Esnaf</span></div>
+              </div>
+              <div class="eser">
+                <div class="eser-num">005</div>
+                <h3>Şakâiku'n-Nu'mâniye Tercümesi</h3>
+                <p>Dönemin önemli ilim eserlerinden yapılan Farsça tercüme çalışması.</p>
+                <div class="eser-tags"><span class="tag">Tercüme</span><span class="tag">Farsça</span></div>
+              </div>
+              <div class="eser">
+                <div class="eser-num">006</div>
+                <h3>Diğer Eserler (15+)</h3>
+                <p>Fütüvvetnâmeler, risaleler, şiirler ve felsefi denemeler dahil 20'yi aşkın eser bıraktı.</p>
+                <div class="eser-tags"><span class="tag">Risale</span><span class="tag">Şiir</span><span class="tag">Felsefe</span></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Kontroller -->
+        <div class="eserler-controls">
+          <button class="eser-btn" id="eserPrev" aria-label="Önceki">&#8592;</button>
+          <div class="eser-dots" id="eserDots"></div>
+          <button class="eser-btn" id="eserNext" aria-label="Sonraki">&#8594;</button>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -701,6 +852,15 @@
 
   <!-- JAVASCRIPT -->
   <script>
+    /* ── Dark / Light mod ── */
+    const themeBtn = document.getElementById('themeBtn');
+    themeBtn.addEventListener('click', () => {
+      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+      document.documentElement.setAttribute('data-theme', isLight ? '' : 'light');
+      themeBtn.textContent = isLight ? '☀' : '☽';
+    });
+
+    /* ── Hamburger menü ── */
     const hamburger  = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     const closeLinks = document.querySelectorAll('.close-mobile');
@@ -726,14 +886,55 @@
     hamburger.addEventListener('click', () =>
       mobileMenu.classList.contains('open') ? closeMenu() : openMenu()
     );
-
     closeLinks.forEach(l => l.addEventListener('click', closeMenu));
-
     mobileMenu.addEventListener('click', e => { if (e.target === mobileMenu) closeMenu(); });
-
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-
     window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
+
+    /* ── Eserler Slider ── */
+    const track    = document.getElementById('eserlerTrack');
+    const prevBtn  = document.getElementById('eserPrev');
+    const nextBtn  = document.getElementById('eserNext');
+    const dotsWrap = document.getElementById('eserDots');
+    const slides   = track.querySelectorAll('.eser-slide');
+    const total    = slides.length;
+    let current    = 0;
+
+    /* Nokta butonlarını oluştur */
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'eser-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', (i + 1) + '. slide');
+      dot.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(dot);
+    });
+
+    function updateUI() {
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dotsWrap.querySelectorAll('.eser-dot').forEach((d, i) =>
+        d.classList.toggle('active', i === current)
+      );
+
+    }
+
+    function goTo(n) {
+      current = ((n % total) + total) % total;
+      updateUI();
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    /* Otomatik geçiş — 3 saniyede bir, mouse üzerindeyken durur */
+    let autoplay = setInterval(() => goTo(current + 1), 3000);
+
+    const sliderWrap = document.querySelector('.eserler-slider-wrap');
+    sliderWrap.addEventListener('mouseenter', () => clearInterval(autoplay));
+    sliderWrap.addEventListener('mouseleave', () => {
+      autoplay = setInterval(() => goTo(current + 1), 3000);
+    });
+
+    updateUI();
   </script>
 
 </body>
