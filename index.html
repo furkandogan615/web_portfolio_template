@@ -366,20 +366,10 @@
     /* ─── ESERLER — SLIDER ──────────────────────────── */
     #eserler { background: var(--bg2); }
 
-    .eserler-slider-wrap {
-      position: relative;
-    }
+    .eserler-slider-wrap { position: relative; }
+    .eserler-slider { overflow: hidden; }
+    .eserler-track { display: flex; transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1); }
 
-    .eserler-slider {
-      overflow: hidden;
-    }
-
-    .eserler-track {
-      display: flex;
-      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* Her slide: 3 kart yan yana (masaüstü) */
     .eser-slide {
       min-width: 100%;
       display: grid;
@@ -401,7 +391,6 @@
     .eser p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
     .eser-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 1rem; }
 
-    /* Slider kontrolleri */
     .eserler-controls {
       display: flex;
       align-items: center;
@@ -411,8 +400,7 @@
     }
 
     .eser-btn {
-      width: 40px;
-      height: 40px;
+      width: 40px; height: 40px;
       border-radius: 2px;
       border: 1px solid var(--border);
       background: transparent;
@@ -420,23 +408,16 @@
       font-size: 1.2rem;
       cursor: pointer;
       transition: border-color 0.25s, background 0.25s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       line-height: 1;
     }
     .eser-btn:hover { border-color: var(--gold); background: rgba(201,169,110,0.07); }
     .eser-btn:disabled { opacity: 0.25; cursor: default; }
 
-    .eser-dots {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
+    .eser-dots { display: flex; gap: 8px; align-items: center; }
 
     .eser-dot {
-      width: 6px;
-      height: 6px;
+      width: 6px; height: 6px;
       border-radius: 50%;
       background: var(--border);
       border: none;
@@ -444,10 +425,7 @@
       transition: background 0.25s, transform 0.25s;
       padding: 0;
     }
-    .eser-dot.active {
-      background: var(--gold);
-      transform: scale(1.4);
-    }
+    .eser-dot.active { background: var(--gold); transform: scale(1.4); }
 
     /* ─── MİRAS ─────────────────────────────────────── */
     #miras { background: var(--bg); }
@@ -479,8 +457,278 @@
 
     .quote-block cite { font-size: 0.85rem; color: var(--gold); letter-spacing: 0.1em; }
 
+    /* ═══════════════════════════════════════════════════
+       GERİ BİLDİRİM FORMU — Mevcut temayla tam uyumlu
+    ═══════════════════════════════════════════════════ */
+    #geribildirim { background: var(--bg2); }
+
+    .gb-intro {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text);
+      max-width: 680px;
+      margin-bottom: 3rem;
+    }
+
+    /* Form kart */
+    .gb-card {
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: rgba(201,169,110,0.02);
+      padding: 2.5rem 3rem;
+    }
+    @media (max-width: 600px) { .gb-card { padding: 1.8rem 1.2rem; } }
+
+    /* Alan */
+    .gb-field { margin-bottom: 1.6rem; }
+    .gb-field label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      transition: color 0.25s;
+    }
+    .gb-field:focus-within label { color: var(--gold); }
+
+    .gb-field input[type="text"],
+    .gb-field input[type="email"],
+    .gb-field select,
+    .gb-field textarea {
+      width: 100%;
+      background: rgba(201,169,110,0.03);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 0.75rem 1rem;
+      color: var(--cream);
+      font-family: 'Crimson Text', serif;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+      appearance: none;
+    }
+    .gb-field input[type="text"]:focus,
+    .gb-field input[type="email"]:focus,
+    .gb-field select:focus,
+    .gb-field textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,169,110,0.1);
+    }
+    .gb-field input.gb-invalid,
+    .gb-field select.gb-invalid,
+    .gb-field textarea.gb-invalid {
+      border-color: #c0392b !important;
+      box-shadow: 0 0 0 3px rgba(192,57,43,0.1) !important;
+    }
+    .gb-field input.gb-valid,
+    .gb-field select.gb-valid,
+    .gb-field textarea.gb-valid {
+      border-color: #6aaa7a !important;
+    }
+    .gb-field input::placeholder,
+    .gb-field textarea::placeholder { color: var(--muted); opacity: 0.6; }
+    .gb-field textarea { resize: vertical; min-height: 100px; }
+    .gb-field select option { background: #13100c; }
+
+    /* İki kolon */
+    .gb-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+    @media (max-width: 520px) { .gb-row { grid-template-columns: 1fr; } }
+
+    /* Hata mesajı */
+    .gb-err {
+      display: none;
+      font-size: 0.8rem;
+      color: #c0392b;
+      margin-top: 0.35rem;
+      letter-spacing: 0.02em;
+    }
+    .gb-err.show { display: block; }
+
+    /* Yıldız puanlama */
+    .gb-stars-wrap { margin-bottom: 1.6rem; }
+    .gb-stars-wrap > label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+    .gb-stars {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      gap: 4px;
+    }
+    .gb-stars input { display: none; }
+    .gb-stars label {
+      font-size: 2rem;
+      color: var(--border);
+      cursor: pointer;
+      transition: color 0.15s, transform 0.15s;
+      line-height: 1;
+    }
+    .gb-stars label:hover,
+    .gb-stars label:hover ~ label { color: var(--gold); transform: scale(1.2); }
+    .gb-stars input:checked ~ label { color: var(--gold); }
+    .gb-star-err { display: none; font-size: 0.8rem; color: #c0392b; margin-top: 0.35rem; }
+    .gb-star-err.show { display: block; }
+
+    /* Kategori seçimi (pill radio) */
+    .gb-radio-wrap { margin-bottom: 1.6rem; }
+    .gb-radio-wrap > label {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+    .gb-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .gb-pills input { display: none; }
+    .gb-pills label {
+      padding: 0.3rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      letter-spacing: 0.04em;
+    }
+    .gb-pills input:checked + label {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(201,169,110,0.08);
+    }
+    .gb-pills label:hover { border-color: var(--gold); color: var(--gold); }
+    .gb-pill-err { display: none; font-size: 0.8rem; color: #c0392b; margin-top: 0.35rem; }
+    .gb-pill-err.show { display: block; }
+
+    /* Ayırıcı */
+    .gb-divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+    /* Bölüm başlığı */
+    .gb-sub {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--gold2);
+      margin-bottom: 1.4rem;
+    }
+
+    /* Onay kutusu */
+    .gb-check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+      margin-bottom: 1.8rem;
+    }
+    .gb-check-row input[type="checkbox"] {
+      width: 16px; height: 16px; min-width: 16px;
+      margin-top: 3px;
+      accent-color: var(--gold);
+      cursor: pointer;
+    }
+    .gb-check-row label {
+      font-size: 0.9rem;
+      color: var(--muted);
+      cursor: pointer;
+      line-height: 1.6;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* Gönder butonu */
+    .gb-submit {
+      width: 100%;
+      padding: 0.85rem 2rem;
+      background: var(--gold);
+      color: #0d0b08;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      font-family: 'Crimson Text', serif;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .gb-submit:hover { background: var(--gold2); border-color: var(--gold2); }
+    .gb-submit:disabled { opacity: 0.55; cursor: not-allowed; }
+
+    /* Spinner */
+    .gb-spinner {
+      display: none;
+      width: 16px; height: 16px;
+      border: 2px solid rgba(13,11,8,0.3);
+      border-top-color: #0d0b08;
+      border-radius: 50%;
+      animation: gbSpin 0.7s linear infinite;
+      margin: 0 auto;
+    }
+    .gb-submit.loading .gb-btn-text { display: none; }
+    .gb-submit.loading .gb-spinner { display: block; }
+    @keyframes gbSpin { to { transform: rotate(360deg); } }
+
+    /* Başarı kutusu */
+    .gb-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: rgba(201,169,110,0.02);
+    }
+    .gb-success.show { display: block; }
+    .gb-success-icon {
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      animation: gbPop 0.4s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes gbPop { from { transform: scale(0); opacity: 0; } }
+    .gb-success h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-style: italic;
+      color: var(--cream);
+      margin-bottom: 0.8rem;
+    }
+    .gb-success p { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
+    .gb-summary {
+      display: inline-block;
+      text-align: left;
+      background: rgba(201,169,110,0.05);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 1rem 1.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 1.5rem;
+    }
+    .gb-summary strong { color: var(--gold); }
+    .gb-reset {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--gold);
+      padding: 0.6rem 1.8rem;
+      border-radius: 2px;
+      font-family: 'Crimson Text', serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .gb-reset:hover { border-color: var(--gold); background: rgba(201,169,110,0.07); }
+
     /* ─── ZİYARET ───────────────────────────────────── */
-    #iletisim { background: var(--bg2); }
+    #iletisim { background: var(--bg); }
 
     .ziyaret-grid {
       display: grid;
@@ -558,7 +806,6 @@
     /* ═══════════════════════════════════════════════════
        RESPONSIVE
     ═══════════════════════════════════════════════════ */
-
     @media (max-width: 768px) {
       .nav-links { display: none !important; }
       .hamburger { display: flex !important; }
@@ -572,7 +819,6 @@
       .ziyaret-grid { grid-template-columns: 1fr; gap: 2rem; }
       .ziyaret-map { aspect-ratio: 16/9; }
       .pillars { grid-template-columns: 1fr 1fr; }
-      /* Mobilde eserler: tek kart per slide */
       .eser-slide { grid-template-columns: 1fr; }
     }
 
@@ -603,31 +849,28 @@
   <!-- NAV -->
   <nav>
     <a class="nav-logo" href="#top">Ahi Evran</a>
-
     <ul class="nav-links" aria-label="Ana menü">
       <li><a href="#hayat">Hayatı</a></li>
       <li><a href="#ahilik">Ahilik</a></li>
       <li><a href="#eserler">Eserleri</a></li>
       <li><a href="#miras">Mirası</a></li>
+      <li><a href="#geribildirim">Geri Bildirim</a></li>
       <li><a href="#iletisim">Ziyaret</a></li>
     </ul>
-
     <button class="theme-btn" id="themeBtn" aria-label="Tema değiştir">☀</button>
-
     <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
   </nav>
 
   <!-- Mobil overlay menü -->
   <div class="mobile-menu" id="mobileMenu" aria-label="Mobil menü">
-    <a href="#hayat"    class="close-mobile">Hayatı</a>
-    <a href="#ahilik"   class="close-mobile">Ahilik</a>
-    <a href="#eserler"  class="close-mobile">Eserleri</a>
-    <a href="#miras"    class="close-mobile">Mirası</a>
-    <a href="#iletisim" class="close-mobile">Ziyaret</a>
+    <a href="#hayat"         class="close-mobile">Hayatı</a>
+    <a href="#ahilik"        class="close-mobile">Ahilik</a>
+    <a href="#eserler"       class="close-mobile">Eserleri</a>
+    <a href="#miras"         class="close-mobile">Mirası</a>
+    <a href="#geribildirim"  class="close-mobile">Geri Bildirim</a>
+    <a href="#iletisim"      class="close-mobile">Ziyaret</a>
   </div>
 
   <!-- HERO -->
@@ -710,14 +953,12 @@
       <p class="section-num">02</p>
       <h2 class="section-title">Ahilik <em>Teşkilatı</em></h2>
       <p class="ahilik-intro">Ahilik, Ahi Evran'ın kurduğu ve 13. yüzyıldan itibaren Anadolu'da hızla yayılan esnaf teşkilatıdır. Ahlak, bilim, sanat ve cömertliği temel ilke olarak benimsedi.</p>
-
       <div class="pillars">
         <div class="pillar"><div class="pillar-icon">◈</div><h3>Ahlak</h3><p>Dürüstlük, doğruluk ve adalet temel ilkedir. Müşteriyi aldatmak kesinlikle yasak sayılırdı.</p></div>
         <div class="pillar"><div class="pillar-icon">◈</div><h3>Sanat</h3><p>Çıraktan kalfa, kalfadan ustaya uzanan eğitim sistemi. Ustalık "şed kuşanma" töreniyle resmîleşirdi.</p></div>
         <div class="pillar"><div class="pillar-icon">◈</div><h3>Akıl</h3><p>Bilim ve aklı rehber edinmek. Cahillik ile tembellik en büyük kusurlar sayıldı.</p></div>
         <div class="pillar"><div class="pillar-icon">◈</div><h3>Cömertlik</h3><p>Zaviyeler her yolcuya açıktı. Misafirperverlik kutsal bir görev kabul edilirdi.</p></div>
       </div>
-
       <h3 style="font-family:'Playfair Display',serif;color:var(--cream);font-size:1.4rem;margin-bottom:1.5rem;">Ahilik <em style="color:var(--gold2);">Dereceleri</em></h3>
       <div class="degrees">
         <div class="degree"><div class="degree-num">001</div><div class="degree-info"><h4>Yiğit (Yamak)</h4><p>Ahilik yoluna ilk adımı atan acemi.</p></div><div class="degree-badges"><span class="badge">Başlangıç</span><span class="badge">Eğitim</span></div></div>
@@ -729,71 +970,32 @@
     </div>
   </section>
 
-  <!-- ESERLER — SLIDER -->
+  <!-- ESERLER -->
   <section id="eserler">
     <div class="container">
       <p class="section-num">03</p>
       <h2 class="section-title">Öne Çıkan <em>Eserleri</em></h2>
-
       <div class="eserler-slider-wrap">
         <div class="eserler-slider">
           <div class="eserler-track" id="eserlerTrack">
-
-            <!-- Slide 1: kartlar 001, 002, 003 -->
             <div class="eser-slide">
-              <div class="eser">
-                <div class="eser-num">001</div>
-                <h3>Letâif-i Hikmet</h3>
-                <p>Sultan II. İzzeddin Keykavus'a sunulan kapsamlı nasihat kitabı. Siyasetname türünün en önemli örneklerinden biridir.</p>
-                <div class="eser-tags"><span class="tag">Siyasetname</span><span class="tag">Farsça</span></div>
-              </div>
-              <div class="eser">
-                <div class="eser-num">002</div>
-                <h3>Tabsıra-i Mübtedi</h3>
-                <p>Tasavvuf yoluna yeni adım atanlar için kaleme alınan rehber eser. Ahilik adabını sade bir dille açıklar.</p>
-                <div class="eser-tags"><span class="tag">Tasavvuf</span><span class="tag">Ahilik</span></div>
-              </div>
-              <div class="eser">
-                <div class="eser-num">003</div>
-                <h3>Metâli'ü'l-İman</h3>
-                <p>İman esaslarını sistematik biçimde ele alan kelam eseri. Selçuklu medreselerinde ders kitabı olarak okutulmuştur.</p>
-                <div class="eser-tags"><span class="tag">Kelam</span><span class="tag">Medrese</span></div>
-              </div>
+              <div class="eser"><div class="eser-num">001</div><h3>Letâif-i Hikmet</h3><p>Sultan II. İzzeddin Keykavus'a sunulan kapsamlı nasihat kitabı. Siyasetname türünün en önemli örneklerinden biridir.</p><div class="eser-tags"><span class="tag">Siyasetname</span><span class="tag">Farsça</span></div></div>
+              <div class="eser"><div class="eser-num">002</div><h3>Tabsıra-i Mübtedi</h3><p>Tasavvuf yoluna yeni adım atanlar için kaleme alınan rehber eser. Ahilik adabını sade bir dille açıklar.</p><div class="eser-tags"><span class="tag">Tasavvuf</span><span class="tag">Ahilik</span></div></div>
+              <div class="eser"><div class="eser-num">003</div><h3>Metâli'ü'l-İman</h3><p>İman esaslarını sistematik biçimde ele alan kelam eseri. Selçuklu medreselerinde ders kitabı olarak okutulmuştur.</p><div class="eser-tags"><span class="tag">Kelam</span><span class="tag">Medrese</span></div></div>
             </div>
-
-            <!-- Slide 2: kartlar 004, 005, 006 -->
             <div class="eser-slide">
-              <div class="eser">
-                <div class="eser-num">004</div>
-                <h3>Mürşidü'l-Kifâye</h3>
-                <p>Ahilik teşkilatının kurallarını ve meslek ahlakını düzenleyen fütüvvetname niteliğinde rehber.</p>
-                <div class="eser-tags"><span class="tag">Fütüvvetname</span><span class="tag">Esnaf</span></div>
-              </div>
-              <div class="eser">
-                <div class="eser-num">005</div>
-                <h3>Şakâiku'n-Nu'mâniye Tercümesi</h3>
-                <p>Dönemin önemli ilim eserlerinden yapılan Farsça tercüme çalışması.</p>
-                <div class="eser-tags"><span class="tag">Tercüme</span><span class="tag">Farsça</span></div>
-              </div>
-              <div class="eser">
-                <div class="eser-num">006</div>
-                <h3>Diğer Eserler (15+)</h3>
-                <p>Fütüvvetnâmeler, risaleler, şiirler ve felsefi denemeler dahil 20'yi aşkın eser bıraktı.</p>
-                <div class="eser-tags"><span class="tag">Risale</span><span class="tag">Şiir</span><span class="tag">Felsefe</span></div>
-              </div>
+              <div class="eser"><div class="eser-num">004</div><h3>Mürşidü'l-Kifâye</h3><p>Ahilik teşkilatının kurallarını ve meslek ahlakını düzenleyen fütüvvetname niteliğinde rehber.</p><div class="eser-tags"><span class="tag">Fütüvvetname</span><span class="tag">Esnaf</span></div></div>
+              <div class="eser"><div class="eser-num">005</div><h3>Şakâiku'n-Nu'mâniye Tercümesi</h3><p>Dönemin önemli ilim eserlerinden yapılan Farsça tercüme çalışması.</p><div class="eser-tags"><span class="tag">Tercüme</span><span class="tag">Farsça</span></div></div>
+              <div class="eser"><div class="eser-num">006</div><h3>Diğer Eserler (15+)</h3><p>Fütüvvetnâmeler, risaleler, şiirler ve felsefi denemeler dahil 20'yi aşkın eser bıraktı.</p><div class="eser-tags"><span class="tag">Risale</span><span class="tag">Şiir</span><span class="tag">Felsefe</span></div></div>
             </div>
-
           </div>
         </div>
-
-        <!-- Kontroller -->
         <div class="eserler-controls">
           <button class="eser-btn" id="eserPrev" aria-label="Önceki">&#8592;</button>
           <div class="eser-dots" id="eserDots"></div>
           <button class="eser-btn" id="eserNext" aria-label="Sonraki">&#8594;</button>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -810,13 +1012,149 @@
         <div class="miras-item"><div class="miras-num">05</div><div><h3>Ahi Evran Üniversitesi</h3><p>Kırşehir'de 2006 yılında kurulan devlet üniversitesi onun adını taşımaktadır.</p></div></div>
         <div class="miras-item"><div class="miras-num">06</div><div><h3>Ahilik Haftası</h3><p>Her yıl Ekim ayında Kırşehir'de düzenlenen etkinlikler bu köklü geleneği yaşatmaktadır.</p></div></div>
       </div>
-
       <div class="quote-block">
-        <blockquote>
-          "Hiç ölmeyecekmiş gibi bu dünya için,<br>
-          yarın ölecekmiş gibi ahiret için çalış."
-        </blockquote>
+        <blockquote>"Hiç ölmeyecekmiş gibi bu dünya için,<br>yarın ölecekmiş gibi ahiret için çalış."</blockquote>
         <cite>— Ahi Evran Velî</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       GERİ BİLDİRİM — 05. BÖLÜM
+  ════════════════════════════════════════════════ -->
+  <section id="geribildirim">
+    <div class="container">
+      <p class="section-num">05</p>
+      <h2 class="section-title">Görüşlerinizi <em>Paylaşın</em></h2>
+      <p class="gb-intro">Bu sayfayı ziyaret ettiğiniz için teşekkür ederiz. Ahi Evran ve Ahilik teşkilatı hakkındaki bu çalışmayı nasıl buldunuz? Görüşleriniz sayfanın geliştirilmesine katkı sağlayacaktır.</p>
+
+      <!-- Başarı kutusu -->
+      <div class="gb-success" id="gbSuccess">
+        <div class="gb-success-icon">✦</div>
+        <h3>Teşekkürler, değerli ziyaretçi.</h3>
+        <p>Geri bildiriminiz başarıyla alındı. Bu sayfayı daha iyi hale getirmemize yardımcı olduğunuz için minnettarız.</p>
+        <div class="gb-summary" id="gbSummary"></div>
+        <button class="gb-reset" onclick="gbReset()">Yeni Değerlendirme Yap</button>
+      </div>
+
+      <!-- Form -->
+      <div class="gb-card" id="gbCard">
+        <form id="gbForm" novalidate>
+
+          <!-- Kişisel Bilgiler -->
+          <p class="gb-sub">Kişisel Bilgiler</p>
+          <div class="gb-row">
+            <div class="gb-field">
+              <label for="gbName">Adınız Soyadınız *</label>
+              <input type="text" id="gbName" placeholder="Ad Soyad" required/>
+              <span class="gb-err" id="gbNameErr">Bu alan zorunludur.</span>
+            </div>
+            <div class="gb-field">
+              <label for="gbEmail">E-posta Adresiniz *</label>
+              <input type="email" id="gbEmail" placeholder="ornek@email.com" required/>
+              <span class="gb-err" id="gbEmailErr">Geçerli bir e-posta giriniz.</span>
+            </div>
+          </div>
+          <div class="gb-field">
+            <label for="gbRole">Ziyaretçi Profiliniz</label>
+            <select id="gbRole">
+              <option value="">— Seçiniz (isteğe bağlı) —</option>
+              <option>Öğrenci</option>
+              <option>Araştırmacı / Akademisyen</option>
+              <option>Öğretmen</option>
+              <option>Tarih Meraklısı</option>
+              <option>Kırşehir Sakini</option>
+              <option>Diğer</option>
+            </select>
+          </div>
+
+          <hr class="gb-divider"/>
+
+          <!-- Değerlendirme -->
+          <p class="gb-sub">Sayfa Değerlendirmesi</p>
+
+          <!-- Yıldız -->
+          <div class="gb-stars-wrap">
+            <label>Genel Memnuniyet Puanınız *</label>
+            <div class="gb-stars" id="gbStars">
+              <input type="radio" name="gbRating" id="gbs5" value="5"/><label for="gbs5" title="Mükemmel">★</label>
+              <input type="radio" name="gbRating" id="gbs4" value="4"/><label for="gbs4" title="İyi">★</label>
+              <input type="radio" name="gbRating" id="gbs3" value="3"/><label for="gbs3" title="Orta">★</label>
+              <input type="radio" name="gbRating" id="gbs2" value="2"/><label for="gbs2" title="Kötü">★</label>
+              <input type="radio" name="gbRating" id="gbs1" value="1"/><label for="gbs1" title="Çok Kötü">★</label>
+            </div>
+            <span class="gb-star-err" id="gbStarErr">Lütfen bir puan seçiniz.</span>
+          </div>
+
+          <!-- Bölüm seçimi -->
+          <div class="gb-radio-wrap">
+            <label>En Beğendiğiniz Bölüm *</label>
+            <div class="gb-pills">
+              <input type="radio" name="gbSection" id="gbs_hayat"   value="Hayatı"/>   <label for="gbs_hayat">Hayatı</label>
+              <input type="radio" name="gbSection" id="gbs_ahilik"  value="Ahilik"/>   <label for="gbs_ahilik">Ahilik</label>
+              <input type="radio" name="gbSection" id="gbs_eserler" value="Eserleri"/> <label for="gbs_eserler">Eserleri</label>
+              <input type="radio" name="gbSection" id="gbs_miras"   value="Mirası"/>   <label for="gbs_miras">Mirası</label>
+              <input type="radio" name="gbSection" id="gbs_tum"     value="Tamamı"/>   <label for="gbs_tum">Tamamı</label>
+            </div>
+            <span class="gb-pill-err" id="gbSectionErr">Lütfen bir bölüm seçiniz.</span>
+          </div>
+
+          <div class="gb-field">
+            <label for="gbUsability">İçeriğin Anlaşılırlığı *</label>
+            <select id="gbUsability" required>
+              <option value="">— Sayfanın içeriği ne kadar anlaşılırdı? —</option>
+              <option value="Çok açık ve anlaşılır">Çok açık ve anlaşılır</option>
+              <option value="Büyük ölçüde anlaşılır">Büyük ölçüde anlaşılır</option>
+              <option value="Kısmen anlaşılır">Kısmen anlaşılır</option>
+              <option value="Anlamakta güçlük çektim">Anlamakta güçlük çektim</option>
+            </select>
+            <span class="gb-err" id="gbUsabilityErr">Lütfen bir seçenek belirtiniz.</span>
+          </div>
+
+          <hr class="gb-divider"/>
+
+          <!-- Detaylı görüş -->
+          <p class="gb-sub">Detaylı Görüşler</p>
+
+          <div class="gb-field">
+            <label for="gbLiked">Neyi Beğendiniz? *</label>
+            <textarea id="gbLiked" placeholder="Sayfada dikkatinizi çeken ya da beğendiğiniz şeyleri yazınız…" required></textarea>
+            <span class="gb-err" id="gbLikedErr">Lütfen en az 15 karakter giriniz.</span>
+          </div>
+
+          <div class="gb-field">
+            <label for="gbImprove">Neyi Geliştirmeliyim? <span style="font-size:0.75rem;letter-spacing:0;">(isteğe bağlı)</span></label>
+            <textarea id="gbImprove" placeholder="Eksik veya geliştirilebilecek noktaları paylaşabilirsiniz…"></textarea>
+          </div>
+
+          <div class="gb-field">
+            <label for="gbRecommend">Bu Sayfayı Başkasına Önerir misiniz? *</label>
+            <select id="gbRecommend" required>
+              <option value="">— Seçiniz —</option>
+              <option value="Kesinlikle evet">Kesinlikle evet</option>
+              <option value="Muhtemelen evet">Muhtemelen evet</option>
+              <option value="Emin değilim">Emin değilim</option>
+              <option value="Muhtemelen hayır">Muhtemelen hayır</option>
+            </select>
+            <span class="gb-err" id="gbRecommendErr">Lütfen bir seçenek belirtiniz.</span>
+          </div>
+
+          <hr class="gb-divider"/>
+
+          <div class="gb-check-row">
+            <input type="checkbox" id="gbConsent" required/>
+            <label for="gbConsent">
+              Geri bildirimimin bu sayfanın geliştirilmesi amacıyla kullanılmasına izin veriyorum. *
+            </label>
+          </div>
+          <span class="gb-err" id="gbConsentErr" style="margin-top:-12px;margin-bottom:1.2rem;">Bu onayı vermeniz gerekmektedir.</span>
+
+          <button type="submit" class="gb-submit" id="gbSubmit">
+            <span class="gb-btn-text">Geri Bildirimi Gönder</span>
+            <div class="gb-spinner"></div>
+          </button>
+
+        </form>
       </div>
     </div>
   </section>
@@ -872,20 +1210,14 @@
       hamburger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
     }
-
     function closeMenu() {
       mobileMenu.classList.remove('open');
       hamburger.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
-      setTimeout(() => {
-        if (!mobileMenu.classList.contains('open')) mobileMenu.style.display = 'none';
-      }, 320);
+      setTimeout(() => { if (!mobileMenu.classList.contains('open')) mobileMenu.style.display = 'none'; }, 320);
     }
-
-    hamburger.addEventListener('click', () =>
-      mobileMenu.classList.contains('open') ? closeMenu() : openMenu()
-    );
+    hamburger.addEventListener('click', () => mobileMenu.classList.contains('open') ? closeMenu() : openMenu());
     closeLinks.forEach(l => l.addEventListener('click', closeMenu));
     mobileMenu.addEventListener('click', e => { if (e.target === mobileMenu) closeMenu(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
@@ -900,7 +1232,6 @@
     const total    = slides.length;
     let current    = 0;
 
-    /* Nokta butonlarını oluştur */
     slides.forEach((_, i) => {
       const dot = document.createElement('button');
       dot.className = 'eser-dot' + (i === 0 ? ' active' : '');
@@ -911,31 +1242,115 @@
 
     function updateUI() {
       track.style.transform = 'translateX(-' + (current * 100) + '%)';
-      dotsWrap.querySelectorAll('.eser-dot').forEach((d, i) =>
-        d.classList.toggle('active', i === current)
-      );
-
+      dotsWrap.querySelectorAll('.eser-dot').forEach((d, i) => d.classList.toggle('active', i === current));
     }
-
-    function goTo(n) {
-      current = ((n % total) + total) % total;
-      updateUI();
-    }
+    function goTo(n) { current = ((n % total) + total) % total; updateUI(); }
 
     prevBtn.addEventListener('click', () => goTo(current - 1));
     nextBtn.addEventListener('click', () => goTo(current + 1));
 
-    /* Otomatik geçiş — 3 saniyede bir, mouse üzerindeyken durur */
     let autoplay = setInterval(() => goTo(current + 1), 3000);
-
     const sliderWrap = document.querySelector('.eserler-slider-wrap');
     sliderWrap.addEventListener('mouseenter', () => clearInterval(autoplay));
-    sliderWrap.addEventListener('mouseleave', () => {
-      autoplay = setInterval(() => goTo(current + 1), 3000);
+    sliderWrap.addEventListener('mouseleave', () => { autoplay = setInterval(() => goTo(current + 1), 3000); });
+    updateUI();
+
+    /* ════════════════════════════════════════════════
+       GERİ BİLDİRİM FORMU — Doğrulama Mantığı
+    ════════════════════════════════════════════════ */
+    const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    function gbGet(id) { return document.getElementById(id); }
+
+    function gbMark(el, valid) {
+      el.classList.toggle('gb-valid', valid);
+      el.classList.toggle('gb-invalid', !valid);
+    }
+    function gbShowErr(id) { gbGet(id).classList.add('show'); }
+    function gbHideErr(id) { gbGet(id).classList.remove('show'); }
+
+    /* Anlık doğrulama (blur anında) */
+    const gbFields = [
+      { id: 'gbName',      errId: 'gbNameErr',      ok: v => v.trim().length >= 2 },
+      { id: 'gbEmail',     errId: 'gbEmailErr',      ok: v => emailRx.test(v.trim()) },
+      { id: 'gbUsability', errId: 'gbUsabilityErr',  ok: v => v !== '' },
+      { id: 'gbLiked',     errId: 'gbLikedErr',      ok: v => v.trim().length >= 15 },
+      { id: 'gbRecommend', errId: 'gbRecommendErr',  ok: v => v !== '' },
+    ];
+
+    gbFields.forEach(({ id, errId, ok }) => {
+      const el = gbGet(id);
+      el.addEventListener('blur', () => {
+        if (!ok(el.value)) { gbMark(el, false); gbShowErr(errId); }
+        else               { gbMark(el, true);  gbHideErr(errId); }
+      });
+      el.addEventListener('input', () => {
+        if (el.classList.contains('gb-invalid') && ok(el.value)) { gbMark(el, true); gbHideErr(errId); }
+      });
     });
 
-    updateUI();
-  </script>
+    /* Form gönderimi */
+    gbGet('gbForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
 
+      gbFields.forEach(({ id, errId, ok }) => {
+        const el = gbGet(id);
+        if (!ok(el.value)) { gbMark(el, false); gbShowErr(errId); valid = false; }
+        else               { gbMark(el, true);  gbHideErr(errId); }
+      });
+
+      /* Yıldız kontrolü */
+      const rating = document.querySelector('input[name="gbRating"]:checked');
+      if (!rating) { gbGet('gbStarErr').classList.add('show'); valid = false; }
+      else           gbGet('gbStarErr').classList.remove('show');
+
+      /* Bölüm kontrolü */
+      const section = document.querySelector('input[name="gbSection"]:checked');
+      if (!section) { gbGet('gbSectionErr').classList.add('show'); valid = false; }
+      else            gbGet('gbSectionErr').classList.remove('show');
+
+      /* Onay kutusu kontrolü */
+      if (!gbGet('gbConsent').checked) { gbShowErr('gbConsentErr'); valid = false; }
+      else gbHideErr('gbConsentErr');
+
+      if (!valid) return;
+
+      /* Simüle edilmiş gönderim */
+      const btn = gbGet('gbSubmit');
+      btn.classList.add('loading');
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.classList.remove('loading');
+        btn.disabled = false;
+
+        const stars = '★'.repeat(rating.value) + '☆'.repeat(5 - rating.value);
+        gbGet('gbSummary').innerHTML =
+          '<strong>Ad Soyad:</strong> '       + gbGet('gbName').value.trim()      + '<br>' +
+          '<strong>E-posta:</strong> '         + gbGet('gbEmail').value.trim()     + '<br>' +
+          '<strong>Puan:</strong> '             + stars + ' (' + rating.value + '/5)' + '<br>' +
+          '<strong>Beğenilen bölüm:</strong> ' + section.value                    + '<br>' +
+          '<strong>Anlaşılırlık:</strong> '    + gbGet('gbUsability').value        + '<br>' +
+          '<strong>Öneri:</strong> '            + gbGet('gbRecommend').value;
+
+        gbGet('gbCard').style.display = 'none';
+        gbGet('gbSuccess').classList.add('show');
+        document.getElementById('geribildirim').scrollIntoView({ behavior: 'smooth' });
+      }, 1500);
+    });
+
+    /* Formu sıfırla */
+    function gbReset() {
+      const form = gbGet('gbForm');
+      form.reset();
+      form.querySelectorAll('input, select, textarea').forEach(el => {
+        el.classList.remove('gb-valid', 'gb-invalid');
+      });
+      document.querySelectorAll('.gb-err, .gb-star-err, .gb-pill-err').forEach(el => el.classList.remove('show'));
+      gbGet('gbSuccess').classList.remove('show');
+      gbGet('gbCard').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
