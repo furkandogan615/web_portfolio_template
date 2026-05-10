@@ -1,0 +1,98 @@
+/* ─── FAVORİ BUTONU ─────────────────────────────────────────────────── */
+.fav-btn {
+  margin-top: 1.2rem;
+  width: 100%;
+  padding: 0.55rem 1rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  color: var(--muted);
+  font-family: 'Crimson Text', serif;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+.fav-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201,169,110,0.06);
+}
+
+.fav-btn.fav-aktif {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(201,169,110,0.1);
+}
+
+/* ─── FAVORİ PANELİ ─────────────────────────────────────────────────── */
+.favori-section {
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 1.8rem 2rem;
+  background: rgba(201,169,110,0.02);
+}
+
+.favori-baslik-h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--cream);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.favori-bos {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.favori-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.favori-item:last-child {
+  border-bottom: none;
+}
+
+.favori-num {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  min-width: 2.5rem;
+}
+
+.favori-baslik {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--cream);
+  flex: 1;
+}
+
+.favori-kaldir {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 2px;
+  transition: color 0.2s;
+}
+
+.favori-kaldir:hover {
+  color: #c0392b;
+}
+
+@media (max-width: 480px) {
+  .favori-section {
+    padding: 1.2rem;
+  }
+}

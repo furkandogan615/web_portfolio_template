@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "num": "001",
+    "baslik": "Letâif-i Hikmet",
+    "aciklama": "Sultan II. İzzeddin Keykavus'a sunulan kapsamlı nasihat kitabı. Siyasetname türünün en önemli örneklerinden biridir.",
+    "kategori": ["Siyasetname", "Farsça"]
+  },
+  {
+    "id": 2,
+    "num": "002",
+    "baslik": "Tabsıra-i Mübtedi",
+    "aciklama": "Tasavvuf yoluna yeni adım atanlar için kaleme alınan rehber eser. Ahilik adabını sade bir dille açıklar.",
+    "kategori": ["Tasavvuf", "Ahilik"]
+  },
+  {
+    "id": 3,
+    "num": "003",
+    "baslik": "Metâli'ü'l-İman",
+    "aciklama": "İman esaslarını sistematik biçimde ele alan kelam eseri. Selçuklu medreselerinde ders kitabı olarak okutulmuştur.",
+    "kategori": ["Kelam", "Medrese"]
+  },
+  {
+    "id": 4,
+    "num": "004",
+    "baslik": "Mürşidü'l-Kifâye",
+    "aciklama": "Ahilik teşkilatının kurallarını ve meslek ahlakını düzenleyen fütüvvetname niteliğinde rehber.",
+    "kategori": ["Fütüvvetname", "Esnaf"]
+  },
+  {
+    "id": 5,
+    "num": "005",
+    "baslik": "Şakâiku'n-Nu'mâniye Tercümesi",
+    "aciklama": "Dönemin önemli ilim eserlerinden yapılan Farsça tercüme çalışması.",
+    "kategori": ["Tercüme", "Farsça"]
+  },
+  {
+    "id": 6,
+    "num": "006",
+    "baslik": "Diğer Eserler (15+)",
+    "aciklama": "Fütüvvetnâmeler, risaleler, şiirler ve felsefi denemeler dahil 20'yi aşkın eser bıraktı.",
+    "kategori": ["Risale", "Şiir", "Felsefe"]
+  }
+]
