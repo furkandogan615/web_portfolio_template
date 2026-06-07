@@ -792,6 +792,403 @@
     }
     .map-btn:hover { background: var(--gold2); }
 
+    /* ─── ARAMA & FİLTRELEME ───────────────────────── */
+    #arama { background: var(--bg2); }
+
+    .arama-intro {
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+    }
+
+    .arama-controls {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      align-items: center;
+    }
+
+    .arama-input-wrap {
+      position: relative;
+      flex: 1;
+      min-width: 220px;
+    }
+
+    .arama-input-wrap svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+      display: inline;
+      width: 16px;
+      height: 16px;
+    }
+
+    #aramaInput {
+      width: 100%;
+      background: rgba(201,169,110,0.03);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 0.75rem 1rem 0.75rem 2.6rem;
+      color: var(--cream);
+      font-family: 'Crimson Text', serif;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    #aramaInput:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,169,110,0.1);
+    }
+    #aramaInput::placeholder { color: var(--muted); opacity: 0.7; }
+
+    .filtre-btns {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filtre-btn {
+      padding: 0.5rem 1.1rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: transparent;
+      color: var(--muted);
+      font-family: 'Crimson Text', serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filtre-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .filtre-btn.aktif {
+      background: rgba(201,169,110,0.1);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .arama-sonuc-bilgi {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.04em;
+    }
+    .arama-sonuc-bilgi span { color: var(--gold); font-weight: 600; }
+
+    .arama-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .arama-kart {
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      background: rgba(201,169,110,0.02);
+      transition: border-color 0.25s, transform 0.2s;
+      cursor: default;
+    }
+    .arama-kart:hover { border-color: var(--gold); transform: translateY(-2px); }
+
+    .arama-kart-kategori {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .arama-kart h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+    }
+    .arama-kart p { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+    .arama-kart-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.8rem; }
+
+    .highlight { background: rgba(201,169,110,0.25); color: var(--cream); border-radius: 2px; padding: 0 2px; }
+
+    .bos-sonuc {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
+      font-size: 1rem;
+      display: none;
+    }
+    .bos-sonuc-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+
+    /* ─── HAVA DURUMU ───────────────────────────────── */
+    .hava-widget {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: rgba(201,169,110,0.02);
+      padding: 1.8rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .hava-baslik {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.2rem;
+    }
+
+    .hava-ana {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hava-ikon { font-size: 3rem; line-height: 1; }
+
+    .hava-sicaklik {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--cream);
+      line-height: 1;
+    }
+
+    .hava-sicaklik sup {
+      font-size: 1.2rem;
+      vertical-align: super;
+      color: var(--gold);
+    }
+
+    .hava-durum {
+      font-size: 1rem;
+      color: var(--muted);
+      text-transform: capitalize;
+      margin-top: 0.2rem;
+    }
+
+    .hava-detaylar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem 1.2rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .hava-detay {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+    }
+    .hava-detay-label { color: var(--muted); }
+    .hava-detay-val   { color: var(--cream); }
+
+    .hava-guncelleme {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-align: right;
+    }
+
+    .hava-yukleniyor {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .hava-spinner {
+      width: 18px; height: 18px;
+      border: 2px solid var(--border);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: hSpin 0.8s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes hSpin { to { transform: rotate(360deg); } }
+
+    .hava-hata { font-size: 0.9rem; color: #c0392b; }
+
+    /* ─── KULLANICI MODAL ───────────────────────────── */
+    .auth-modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(5,4,2,0.85);
+      backdrop-filter: blur(6px);
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .auth-modal-overlay.ac { display: flex; }
+
+    .auth-modal {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2.5rem 2.5rem 2rem;
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+      animation: modalAc 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    @keyframes modalAc { from { transform: scale(0.9); opacity: 0; } }
+
+    .auth-kapat {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-size: 1.4rem;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .auth-kapat:hover { color: var(--gold); }
+
+    .auth-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .auth-tab {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 0.7rem;
+      font-family: 'Crimson Text', serif;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .auth-tab.aktif { color: var(--gold); border-bottom-color: var(--gold); }
+
+    .auth-panel { display: none; }
+    .auth-panel.aktif { display: block; }
+
+    .auth-field { margin-bottom: 1.2rem; }
+    .auth-field label {
+      display: block;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+    }
+    .auth-field input {
+      width: 100%;
+      background: rgba(201,169,110,0.03);
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      padding: 0.7rem 0.9rem;
+      color: var(--cream);
+      font-family: 'Crimson Text', serif;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .auth-field input:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,169,110,0.1);
+    }
+    .auth-field input.hatali { border-color: #c0392b !important; }
+    .auth-field input::placeholder { color: var(--muted); opacity: 0.6; }
+
+    .auth-err {
+      display: none;
+      font-size: 0.82rem;
+      color: #c0392b;
+      margin-top: 0.3rem;
+    }
+    .auth-err.show { display: block; }
+
+    .auth-mesaj {
+      padding: 0.7rem 1rem;
+      border-radius: 2px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      display: none;
+    }
+    .auth-mesaj.hata   { background: rgba(192,57,43,0.1); border: 1px solid rgba(192,57,43,0.3); color: #e74c3c; display: block; }
+    .auth-mesaj.basari { background: rgba(106,170,122,0.1); border: 1px solid rgba(106,170,122,0.3); color: #6aaa7a; display: block; }
+
+    .auth-submit {
+      width: 100%;
+      padding: 0.8rem;
+      background: var(--gold);
+      color: #0d0b08;
+      border: none;
+      border-radius: 2px;
+      font-family: 'Crimson Text', serif;
+      font-size: 1rem;
+      letter-spacing: 0.06em;
+      cursor: pointer;
+      transition: background 0.25s;
+      margin-top: 0.5rem;
+    }
+    .auth-submit:hover { background: var(--gold2); }
+    .auth-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .auth-spinner {
+      display: none;
+      width: 16px; height: 16px;
+      border: 2px solid rgba(13,11,8,0.3);
+      border-top-color: #0d0b08;
+      border-radius: 50%;
+      animation: hSpin 0.7s linear infinite;
+      margin: 0 auto;
+    }
+    .auth-submit.yukleniyor .auth-btn-text { display: none; }
+    .auth-submit.yukleniyor .auth-spinner  { display: block; }
+
+    /* Nav kullanıcı butonu */
+    .nav-auth-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--gold);
+      font-family: 'Crimson Text', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      padding: 0.35rem 0.9rem;
+      cursor: pointer;
+      transition: border-color 0.25s, background 0.25s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .nav-auth-btn:hover { border-color: var(--gold); background: rgba(201,169,110,0.08); }
+
+    .nav-kullanici {
+      display: none;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--gold);
+    }
+    .nav-kullanici.goster { display: flex; }
+    .nav-cikis {
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      font-size: 0.78rem;
+      cursor: pointer;
+      text-decoration: underline;
+      font-family: 'Crimson Text', serif;
+    }
+    .nav-cikis:hover { color: var(--gold); }
+
     /* ─── FOOTER ────────────────────────────────────── */
     footer {
       text-align: center;
@@ -854,10 +1251,16 @@
       <li><a href="#ahilik">Ahilik</a></li>
       <li><a href="#eserler">Eserleri</a></li>
       <li><a href="#miras">Mirası</a></li>
+      <li><a href="#arama">Arama</a></li>
       <li><a href="#geribildirim">Geri Bildirim</a></li>
       <li><a href="#iletisim">Ziyaret</a></li>
     </ul>
     <button class="theme-btn" id="themeBtn" aria-label="Tema değiştir">☀</button>
+    <button class="nav-auth-btn" id="navGirisBtn" onclick="modalAc('giris')">Giriş Yap</button>
+    <div class="nav-kullanici" id="navKullanici">
+      <span id="navKullaniciAd">👤</span>
+      <button class="nav-cikis" onclick="cikisYap()">Çıkış</button>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Menüyü aç/kapat" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -869,8 +1272,69 @@
     <a href="#ahilik"        class="close-mobile">Ahilik</a>
     <a href="#eserler"       class="close-mobile">Eserleri</a>
     <a href="#miras"         class="close-mobile">Mirası</a>
+    <a href="#arama"         class="close-mobile">Arama</a>
     <a href="#geribildirim"  class="close-mobile">Geri Bildirim</a>
     <a href="#iletisim"      class="close-mobile">Ziyaret</a>
+  </div>
+
+  <!-- KAYIT / GİRİŞ MODAL -->
+  <div class="auth-modal-overlay" id="authOverlay" onclick="overlayKapat(event)">
+    <div class="auth-modal">
+      <button class="auth-kapat" onclick="modalKapat()">✕</button>
+      <div class="auth-tabs">
+        <button class="auth-tab aktif" id="tabGiris" onclick="authTab('giris')">Giriş Yap</button>
+        <button class="auth-tab" id="tabKayit" onclick="authTab('kayit')">Kayıt Ol</button>
+      </div>
+
+      <!-- Giriş paneli -->
+      <div class="auth-panel aktif" id="panelGiris">
+        <div class="auth-mesaj" id="girisMsg"></div>
+        <div class="auth-field">
+          <label for="girisEmail">E-posta *</label>
+          <input type="email" id="girisEmail" placeholder="ornek@email.com"/>
+          <span class="auth-err" id="girisEmailErr">Geçerli bir e-posta giriniz.</span>
+        </div>
+        <div class="auth-field">
+          <label for="girisSifre">Şifre *</label>
+          <input type="password" id="girisSifre" placeholder="••••••"/>
+          <span class="auth-err" id="girisSifreErr">Şifre zorunludur.</span>
+        </div>
+        <button class="auth-submit" id="girisBtn" onclick="girisYap()">
+          <span class="auth-btn-text">Giriş Yap</span>
+          <div class="auth-spinner"></div>
+        </button>
+        <p style="text-align:center;margin-top:1rem;font-size:0.85rem;color:var(--muted);">
+          Hesabınız yok mu? <a href="#" style="color:var(--gold);text-decoration:none;" onclick="authTab('kayit');return false;">Kayıt olun</a>
+        </p>
+      </div>
+
+      <!-- Kayıt paneli -->
+      <div class="auth-panel" id="panelKayit">
+        <div class="auth-mesaj" id="kayitMsg"></div>
+        <div class="auth-field">
+          <label for="kayitAd">Ad Soyad *</label>
+          <input type="text" id="kayitAd" placeholder="Adınız Soyadınız"/>
+          <span class="auth-err" id="kayitAdErr">Ad Soyad zorunludur.</span>
+        </div>
+        <div class="auth-field">
+          <label for="kayitEmail">E-posta *</label>
+          <input type="email" id="kayitEmail" placeholder="ornek@email.com"/>
+          <span class="auth-err" id="kayitEmailErr">Geçerli bir e-posta giriniz.</span>
+        </div>
+        <div class="auth-field">
+          <label for="kayitSifre">Şifre * <span style="font-size:0.7rem;letter-spacing:0;">(en az 6 karakter)</span></label>
+          <input type="password" id="kayitSifre" placeholder="••••••"/>
+          <span class="auth-err" id="kayitSifreErr">Şifre en az 6 karakter olmalıdır.</span>
+        </div>
+        <button class="auth-submit" id="kayitBtn" onclick="kayitOl()">
+          <span class="auth-btn-text">Kayıt Ol</span>
+          <div class="auth-spinner"></div>
+        </button>
+        <p style="text-align:center;margin-top:1rem;font-size:0.85rem;color:var(--muted);">
+          Hesabınız var mı? <a href="#" style="color:var(--gold);text-decoration:none;" onclick="authTab('giris');return false;">Giriş yapın</a>
+        </p>
+      </div>
+    </div>
   </div>
 
   <!-- HERO -->
@@ -1020,11 +1484,44 @@
   </section>
 
   <!-- ════════════════════════════════════════════════
-       GERİ BİLDİRİM — 05. BÖLÜM
+       ARAMA & FİLTRELEME — 05. BÖLÜM
+  ════════════════════════════════════════════════ -->
+  <section id="arama">
+    <div class="container">
+      <p class="section-num">05</p>
+      <h2 class="section-title">Arama &amp; <em>Filtreleme</em></h2>
+      <p class="arama-intro">Ahi Evran'ın eserleri ve mirası arasında arama yapın. Kategori butonlarıyla içerikleri filtreleyin.</p>
+
+      <div class="arama-controls">
+        <div class="arama-input-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" id="aramaInput" placeholder="Eser adı, konu veya anahtar kelime ara…"/>
+        </div>
+        <div class="filtre-btns">
+          <button class="filtre-btn aktif" data-filtre="tumu">Tümü</button>
+          <button class="filtre-btn" data-filtre="eser">Eserler</button>
+          <button class="filtre-btn" data-filtre="miras">Miras</button>
+        </div>
+      </div>
+
+      <p class="arama-sonuc-bilgi" id="aramaSonucBilgi"></p>
+
+      <div class="arama-grid" id="aramaGrid"></div>
+      <div class="bos-sonuc" id="bosSonuc">
+        <div class="bos-sonuc-icon">✦</div>
+        <p>Aramanızla eşleşen sonuç bulunamadı.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       GERİ BİLDİRİM — 06. BÖLÜM
   ════════════════════════════════════════════════ -->
   <section id="geribildirim">
     <div class="container">
-      <p class="section-num">05</p>
+      <p class="section-num">06</p>
       <h2 class="section-title">Görüşlerinizi <em>Paylaşın</em></h2>
       <p class="gb-intro">Bu sayfayı ziyaret ettiğiniz için teşekkür ederiz. Ahi Evran ve Ahilik teşkilatı hakkındaki bu çalışmayı nasıl buldunuz? Görüşleriniz sayfanın geliştirilmesine katkı sağlayacaktır.</p>
 
@@ -1173,10 +1670,18 @@
           </div>
         </div>
         <div class="ziyaret-map">
-          <div class="map-icon">✦</div>
-          <div class="map-title">Ahi Evran Türbesi</div>
-          <div class="map-sub">Kırşehir, Türkiye</div>
-          <a class="map-btn" href="https://maps.google.com/?q=Ahi+Evran+Türbesi+Kırşehir" target="_blank" rel="noopener">Haritada Göster →</a>
+          <!-- Hava Durumu Widget -->
+          <div class="hava-widget" style="width:100%;aspect-ratio:unset;">
+            <div class="hava-baslik">Kırşehir Hava Durumu</div>
+            <div id="havaIcerik">
+              <div class="hava-yukleniyor">
+                <div class="hava-spinner"></div>
+                Hava durumu yükleniyor…
+              </div>
+            </div>
+            <div class="hava-guncelleme" id="havaGuncelleme"></div>
+          </div>
+          <a class="map-btn" href="https://maps.google.com/?q=Ahi+Evran+Türbesi+Kırşehir" target="_blank" rel="noopener" style="margin-top:0.5rem;text-align:center;">Haritada Göster →</a>
         </div>
       </div>
     </div>
@@ -1351,6 +1856,320 @@
       gbGet('gbSuccess').classList.remove('show');
       gbGet('gbCard').style.display = 'block';
     }
+    /* ════════════════════════════════════════════════
+       ARAMA & FİLTRELEME
+    ════════════════════════════════════════════════ */
+    const aramaVerisi = [
+      // ESERLER
+      { kategori: 'eser', baslik: 'Letâif-i Hikmet', aciklama: 'Sultan II. İzzeddin Keykavus\'a sunulan kapsamlı nasihat kitabı. Siyasetname türünün en önemli örneklerinden biridir.', etiketler: ['Siyasetname', 'Farsça'] },
+      { kategori: 'eser', baslik: 'Tabsıra-i Mübtedi', aciklama: 'Tasavvuf yoluna yeni adım atanlar için kaleme alınan rehber eser. Ahilik adabını sade bir dille açıklar.', etiketler: ['Tasavvuf', 'Ahilik'] },
+      { kategori: 'eser', baslik: 'Metâli\'ü\'l-İman', aciklama: 'İman esaslarını sistematik biçimde ele alan kelam eseri. Selçuklu medreselerinde ders kitabı olarak okutulmuştur.', etiketler: ['Kelam', 'Medrese'] },
+      { kategori: 'eser', baslik: 'Mürşidü\'l-Kifâye', aciklama: 'Ahilik teşkilatının kurallarını ve meslek ahlakını düzenleyen fütüvvetname niteliğinde rehber.', etiketler: ['Fütüvvetname', 'Esnaf'] },
+      { kategori: 'eser', baslik: 'Şakâiku\'n-Nu\'mâniye Tercümesi', aciklama: 'Dönemin önemli ilim eserlerinden yapılan Farsça tercüme çalışması.', etiketler: ['Tercüme', 'Farsça'] },
+      { kategori: 'eser', baslik: 'Diğer Eserler (15+)', aciklama: 'Fütüvvetnâmeler, risaleler, şiirler ve felsefi denemeler dahil 20\'yi aşkın eser bıraktı.', etiketler: ['Risale', 'Şiir', 'Felsefe'] },
+      // MİRAS
+      { kategori: 'miras', baslik: 'Osmanlı Devleti\'nin Temeli', aciklama: 'Ahiler, Osmanlı\'nın kuruluş sürecinde hem ekonomik hem askeri omurga oldu.', etiketler: ['Osmanlı', 'Tarih'] },
+      { kategori: 'miras', baslik: 'Dünyanın İlk Esnaf Örgütü', aciklama: 'Avrupa loncalarından çok önce kurulan Ahilik, dünya tarihindeki ilk sistematik meslek teşkilatı sayılır.', etiketler: ['Esnaf', 'Teşkilat'] },
+      { kategori: 'miras', baslik: 'Bacıyân-ı Rum', aciklama: 'Eşi Fatma Bacı tarafından kurulan bu teşkilat, dünyanın bilinen ilk kadın örgütüdür.', etiketler: ['Kadın', 'Örgüt'] },
+      { kategori: 'miras', baslik: 'Yeniçeri Ocağı\'na Etki', aciklama: 'Ahilik gelenekleri Osmanlı Yeniçeri Ocağı\'nın kuruluşuna doğrudan katkı sağladı.', etiketler: ['Osmanlı', 'Yeniçeri'] },
+      { kategori: 'miras', baslik: 'Ahi Evran Üniversitesi', aciklama: 'Kırşehir\'de 2006 yılında kurulan devlet üniversitesi onun adını taşımaktadır.', etiketler: ['Eğitim', 'Kırşehir'] },
+      { kategori: 'miras', baslik: 'Ahilik Haftası', aciklama: 'Her yıl Ekim ayında Kırşehir\'de düzenlenen etkinlikler bu köklü geleneği yaşatmaktadır.', etiketler: ['Etkinlik', 'Kırşehir'] },
+    ];
+
+    let aktifFiltre = 'tumu';
+    let aramaMetni  = '';
+
+    function vurgula(metin, aranan) {
+      if (!aranan) return metin;
+      const rx = new RegExp('(' + aranan.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+      return metin.replace(rx, '<span class="highlight">$1</span>');
+    }
+
+    function aramaRender() {
+      const grid    = document.getElementById('aramaGrid');
+      const bilgi   = document.getElementById('aramaSonucBilgi');
+      const bosEl   = document.getElementById('bosSonuc');
+      const ara     = aramaMetni.toLowerCase().trim();
+
+      const filtreli = aramaVerisi.filter(item => {
+        const kategoriEsles = aktifFiltre === 'tumu' || item.kategori === aktifFiltre;
+        const metin = (item.baslik + ' ' + item.aciklama + ' ' + item.etiketler.join(' ')).toLowerCase();
+        const aramaEsles = !ara || metin.includes(ara);
+        return kategoriEsles && aramaEsles;
+      });
+
+      grid.innerHTML = '';
+
+      if (filtreli.length === 0) {
+        bosEl.style.display = 'block';
+        bilgi.innerHTML = '';
+      } else {
+        bosEl.style.display = 'none';
+        bilgi.innerHTML = '<span>' + filtreli.length + '</span> sonuç bulundu' + (ara ? ' — "<span>' + aramaMetni + '</span>"' : '');
+        filtreli.forEach(item => {
+          const kart = document.createElement('div');
+          kart.className = 'arama-kart';
+          kart.innerHTML = `
+            <div class="arama-kart-kategori">${item.kategori === 'eser' ? '✦ Eser' : '◈ Miras'}</div>
+            <h4>${vurgula(item.baslik, aramaMetni)}</h4>
+            <p>${vurgula(item.aciklama, aramaMetni)}</p>
+            <div class="arama-kart-tags">${item.etiketler.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+          `;
+          grid.appendChild(kart);
+        });
+      }
+    }
+
+    /* Filtre butonları */
+    document.querySelectorAll('.filtre-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filtre-btn').forEach(b => b.classList.remove('aktif'));
+        btn.classList.add('aktif');
+        aktifFiltre = btn.dataset.filtre;
+        aramaRender();
+      });
+    });
+
+    /* Arama inputu */
+    document.getElementById('aramaInput').addEventListener('input', function() {
+      aramaMetni = this.value;
+      aramaRender();
+    });
+
+    /* İlk yükleme */
+    aramaRender();
+
+    /* ════════════════════════════════════════════════
+       HAVA DURUMU API — OpenWeatherMap
+    ════════════════════════════════════════════════ */
+    const HAVA_API_KEY = '81345d361d6459bca9d1c973ca40d8cd';
+    const HAVA_SEHIR   = 'Kirsehir,TR';
+
+    const havaIkonlari = {
+      '01d':'☀️','01n':'🌙',
+      '02d':'⛅','02n':'⛅',
+      '03d':'☁️','03n':'☁️',
+      '04d':'☁️','04n':'☁️',
+      '09d':'🌧️','09n':'🌧️',
+      '10d':'🌦️','10n':'🌧️',
+      '11d':'⛈️','11n':'⛈️',
+      '13d':'❄️','13n':'❄️',
+      '50d':'🌫️','50n':'🌫️',
+    };
+
+    async function havaYukle() {
+      const el  = document.getElementById('havaIcerik');
+      const gun = document.getElementById('havaGuncelleme');
+      try {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${HAVA_SEHIR}&appid=${HAVA_API_KEY}&units=metric&lang=tr`;
+        const res  = await fetch(url);
+        if (!res.ok) throw new Error('API hatası: ' + res.status);
+        const d    = await res.json();
+
+        const ikon    = havaIkonlari[d.weather[0].icon] || '🌡️';
+        const sicak   = Math.round(d.main.temp);
+        const hissed  = Math.round(d.main.feels_like);
+        const durum   = d.weather[0].description;
+        const nem     = d.main.humidity;
+        const ruzgar  = (d.wind.speed * 3.6).toFixed(1);
+        const min     = Math.round(d.main.temp_min);
+        const max     = Math.round(d.main.temp_max);
+        const gorus   = (d.visibility / 1000).toFixed(1);
+
+        el.innerHTML = `
+          <div class="hava-ana">
+            <div class="hava-ikon">${ikon}</div>
+            <div>
+              <div class="hava-sicaklik">${sicak}<sup>°C</sup></div>
+              <div class="hava-durum">${durum}</div>
+            </div>
+          </div>
+          <div class="hava-detaylar">
+            <div class="hava-detay"><span class="hava-detay-label">Hissedilen</span><span class="hava-detay-val">${hissed}°C</span></div>
+            <div class="hava-detay"><span class="hava-detay-label">Nem</span><span class="hava-detay-val">%${nem}</span></div>
+            <div class="hava-detay"><span class="hava-detay-label">Rüzgar</span><span class="hava-detay-val">${ruzgar} km/s</span></div>
+            <div class="hava-detay"><span class="hava-detay-label">Görüş</span><span class="hava-detay-val">${gorus} km</span></div>
+            <div class="hava-detay"><span class="hava-detay-label">En düşük</span><span class="hava-detay-val">${min}°C</span></div>
+            <div class="hava-detay"><span class="hava-detay-label">En yüksek</span><span class="hava-detay-val">${max}°C</span></div>
+          </div>
+        `;
+
+        const simdi = new Date();
+        gun.textContent = 'Son güncelleme: ' + simdi.toLocaleTimeString('tr-TR', { hour:'2-digit', minute:'2-digit' });
+
+        // Her 10 dakikada bir otomatik güncelle
+        setTimeout(havaYukle, 10 * 60 * 1000);
+
+      } catch (err) {
+        el.innerHTML = `<div class="hava-hata">⚠️ Hava durumu yüklenemedi.<br><small>${err.message}</small></div>`;
+        gun.innerHTML = '<button onclick="havaYukle()" style="background:transparent;border:1px solid var(--border);color:var(--gold);padding:0.3rem 0.8rem;border-radius:2px;cursor:pointer;font-size:0.8rem;">Tekrar Dene</button>';
+      }
+    }
+
+    havaYukle();
+
+    /* ════════════════════════════════════════════════
+       KULLANICI KAYIT / GİRİŞ
+    ════════════════════════════════════════════════ */
+
+    // ⚠️ InfinityFree'ye yükledikten sonra bu URL'yi güncelleyin
+      const API_URL = 'http://ahievran.website/api';
+
+
+    const emailRxAuth = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    function modalAc(tab) {
+      document.getElementById('authOverlay').classList.add('ac');
+      document.body.style.overflow = 'hidden';
+      authTab(tab || 'giris');
+    }
+
+    function modalKapat() {
+      document.getElementById('authOverlay').classList.remove('ac');
+      document.body.style.overflow = '';
+    }
+
+    function overlayKapat(e) {
+      if (e.target === document.getElementById('authOverlay')) modalKapat();
+    }
+
+    function authTab(tab) {
+      document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('aktif'));
+      document.querySelectorAll('.auth-panel').forEach(p => p.classList.remove('aktif'));
+      document.getElementById('tab' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.add('aktif');
+      document.getElementById('panel' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.add('aktif');
+    }
+
+    function authErr(id, show) {
+      document.getElementById(id).classList.toggle('show', show);
+    }
+
+    function authMsg(id, mesaj, tip) {
+      const el = document.getElementById(id);
+      el.textContent = mesaj;
+      el.className = 'auth-mesaj ' + tip;
+    }
+
+    function authMsgGizle(id) {
+      const el = document.getElementById(id);
+      el.className = 'auth-mesaj';
+    }
+
+    /* ── Kayıt ── */
+    async function kayitOl() {
+      const ad     = document.getElementById('kayitAd').value.trim();
+      const email  = document.getElementById('kayitEmail').value.trim();
+      const sifre  = document.getElementById('kayitSifre').value;
+      let gecerli  = true;
+
+      authErr('kayitAdErr',    ad.length < 2);    if (ad.length < 2)               gecerli = false;
+      authErr('kayitEmailErr', !emailRxAuth.test(email)); if (!emailRxAuth.test(email)) gecerli = false;
+      authErr('kayitSifreErr', sifre.length < 6); if (sifre.length < 6)            gecerli = false;
+
+      if (!gecerli) return;
+
+      const btn = document.getElementById('kayitBtn');
+      btn.classList.add('yukleniyor');
+      btn.disabled = true;
+      authMsgGizle('kayitMsg');
+
+      try {
+        const res = await fetch(API_URL + '/kayit.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ad, email, sifre })
+        });
+        const data = await res.json();
+
+        if (data.basari) {
+          authMsg('kayitMsg', '✓ ' + data.mesaj, 'basari');
+          document.getElementById('kayitAd').value = '';
+          document.getElementById('kayitEmail').value = '';
+          document.getElementById('kayitSifre').value = '';
+          setTimeout(() => authTab('giris'), 1800);
+        } else {
+          authMsg('kayitMsg', '✗ ' + data.mesaj, 'hata');
+        }
+      } catch (err) {
+        authMsg('kayitMsg', '✗ Sunucuya bağlanılamadı. PHP dosyalarını yüklediniz mi?', 'hata');
+      }
+
+      btn.classList.remove('yukleniyor');
+      btn.disabled = false;
+    }
+
+    /* ── Giriş ── */
+    async function girisYap() {
+      const email  = document.getElementById('girisEmail').value.trim();
+      const sifre  = document.getElementById('girisSifre').value;
+      let gecerli  = true;
+
+      authErr('girisEmailErr', !emailRxAuth.test(email)); if (!emailRxAuth.test(email)) gecerli = false;
+      authErr('girisSifreErr', sifre.length === 0);       if (sifre.length === 0)       gecerli = false;
+
+      if (!gecerli) return;
+
+      const btn = document.getElementById('girisBtn');
+      btn.classList.add('yukleniyor');
+      btn.disabled = true;
+      authMsgGizle('girisMsg');
+
+      try {
+        const res = await fetch(API_URL + '/giris.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, sifre })
+        });
+        const data = await res.json();
+
+        if (data.basari) {
+          localStorage.setItem('ahievran_kullanici', JSON.stringify(data.kullanici));
+          kullaniciGuncelle(data.kullanici);
+          modalKapat();
+        } else {
+          authMsg('girisMsg', '✗ ' + data.mesaj, 'hata');
+        }
+      } catch (err) {
+        authMsg('girisMsg', '✗ Sunucuya bağlanılamadı. PHP dosyalarını yüklediniz mi?', 'hata');
+      }
+
+      btn.classList.remove('yukleniyor');
+      btn.disabled = false;
+    }
+
+    /* ── Çıkış ── */
+    function cikisYap() {
+      localStorage.removeItem('ahievran_kullanici');
+      kullaniciGuncelle(null);
+    }
+
+    /* ── Nav güncelle ── */
+    function kullaniciGuncelle(kullanici) {
+      const girisBtn   = document.getElementById('navGirisBtn');
+      const kulDiv     = document.getElementById('navKullanici');
+      const kulAd      = document.getElementById('navKullaniciAd');
+
+      if (kullanici) {
+        girisBtn.style.display = 'none';
+        kulDiv.classList.add('goster');
+        kulAd.textContent = '👤 ' + kullanici.ad;
+      } else {
+        girisBtn.style.display = 'block';
+        kulDiv.classList.remove('goster');
+      }
+    }
+
+    /* ── Sayfa yüklenince oturum kontrolü ── */
+    (function() {
+      const k = localStorage.getItem('ahievran_kullanici');
+      if (k) kullaniciGuncelle(JSON.parse(k));
+    })();
+
+    /* ESC ile modal kapat */
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') modalKapat();
+    });
+
   </script>
 </body>
 </html>
