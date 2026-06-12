@@ -7,7 +7,7 @@ Kullanıcılar sisteme kayıt olabilir, giriş yapabilir ve kendi görevlerini e
 Ahi Evran Tanıtım Web Sitesi
 Bu proje, Ahilik teşkilatının kurucusu olan Ahi Evran'ın hayatını, eserlerini ve Ahilik kültürünü tanıtmak amacıyla hazırlanmış bir web sitesidir.
 
-##Proje Amacı
+#Proje Amacı
 
 Bu web sitesi ile kullanıcıların:
 Ahi Evran'ın hayatını öğrenmesi
@@ -15,13 +15,13 @@ Ahilik teşkilatı hakkında bilgi edinmesi
 Ahiliğin önemi ve özelliklerini anlaması
 amaçlanmaktadır.
 
-##Hedef Kullanıcılar
+#Hedef Kullanıcılar
 
 Öğrenciler
 Günlük görevlerini takip etmek isteyen kullanıcılar
 Görev yönetimi yapmak isteyen herkes
 
-##Temel Özellikler
+#Temel Özellikler
 
 👤 Kullanıcı İşlemleri
 Kullanıcı kaydı oluşturma
@@ -35,7 +35,7 @@ Görev silme
 Görev güncelleme
 Görev listeleme
 
-##Site Özellikleri
+#Site Özellikleri
 Ana sayfa
 Ahi Evran'ın hayatı sayfası
 Ahilik nedir sayfası
